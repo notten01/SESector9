@@ -7,7 +7,6 @@ doc:
 
 automation:
 - .github/**/*
-- /*.bat
 - .gitignore
 - .gitattribute
 
