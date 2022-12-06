@@ -1,5 +1,4 @@
 ﻿using Sandbox.ModAPI;
-using Sector9.Core;
 
 namespace Sector9.Server
 {
@@ -9,6 +8,9 @@ namespace Sector9.Server
     internal class ServerSession
     {
         private readonly MESApi MesApi;
+        private ServerData Data;
+
+        private const string cDataFileName = "S9ServerSession.xml";
 
         public ServerSession()
         {
@@ -18,8 +20,26 @@ namespace Sector9.Server
 
         private void TryLoad()
         {
-            //todo: try loading from disk
-            MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "registered server session");
+            if (MyAPIGateway.Utilities.FileExistsInWorldStorage(cDataFileName, typeof(ServerData)))
+            {
+                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFileName, typeof(ServerData)))
+                {
+                    Data = MyAPIGateway.Utilities.SerializeFromXML<ServerData>(reader.ReadToEnd());
+                }
+            }
+            else
+            {
+                Data = new ServerData();
+                Data.TestData = "testing!";
+            }
+        }
+
+        public void Save()
+        {
+            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(ServerData)))
+            {
+                writer.Write(MyAPIGateway.Utilities.SerializeToXML<ServerData>(Data));
+            }
         }
     }
 }
