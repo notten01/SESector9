@@ -8,15 +8,24 @@ namespace Sector9.Server
     /// </summary>
     internal class ServerSession
     {
+        private const string cDataFileName = "S9ServerSession.xml";
         private readonly MESApi MesApi;
         private ServerData Data;
-
-        private const string cDataFileName = "S9ServerSession.xml";
 
         public ServerSession()
         {
             MesApi = new MESApi();
             TryLoad();
+        }
+
+        public bool EnableLog => Data.EnableLog;
+
+        public void Save()
+        {
+            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(ServerData)))
+            {
+                writer.Write(MyAPIGateway.Utilities.SerializeToXML<ServerData>(Data));
+            }
         }
 
         private void TryLoad()
@@ -33,14 +42,6 @@ namespace Sector9.Server
                 Data = new ServerData();
             }
             Data.Version = S9Constants.Version;
-        }
-
-        public void Save()
-        {
-            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(ServerData)))
-            {
-                writer.Write(MyAPIGateway.Utilities.SerializeToXML<ServerData>(Data));
-            }
         }
     }
 }
