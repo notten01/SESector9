@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+      <LangVersion>6</LangVersion>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="ProtoBuf.Net.Core">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\ProtoBuf.Net.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="Sandbox.Common">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\Sandbox.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="Sandbox.Game">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\Sandbox.Game.dll</HintPath>
+        </Reference>
+        <Reference Include="Sandbox.Graphics">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\Sandbox.Graphics.dll</HintPath>
+        </Reference>
+        <Reference Include="SpaceEngineers.Game">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.Game.dll</HintPath>
+        </Reference>
+        <Reference Include="SpaceEngineers.ObjectBuilders">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\SpaceEngineers.ObjectBuilders.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Game">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Game.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Input">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Input.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Library">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Library.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Math">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Math.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Render">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineers\Bin64\VRage.Render.dll</HintPath>
+        </Reference>
+        <Reference Include="VRage.Render11">
+            <HintPath>E:\Steam\steamapps\common\SpaceEngineersBin64\VRage.Render11.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="deploy.bat" />
+    </Target>
+
+</Project>
