@@ -2,8 +2,6 @@
 {
     public class ServerData
     {
-        public string TestData { get; set; }
-
         public ServerData()
         {
         }
