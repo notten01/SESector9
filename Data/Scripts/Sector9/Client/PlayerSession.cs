@@ -9,13 +9,22 @@ namespace Sector9.Client
     /// </summary>
     internal class PlayerSession
     {
-        private PlayerData Data;
-
         private const string cDataFileName = "S9PlayerSession.xml";
+        private PlayerData Data;
 
         public PlayerSession()
         {
             TryLoad();
+        }
+
+        public bool EnableLog => Data.EnableLog;
+
+        public void Save()
+        {
+            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(PlayerData)))
+            {
+                writer.Write(MyAPIGateway.Utilities.SerializeToXML<PlayerData>(Data));
+            }
         }
 
         private void TryLoad()
@@ -32,14 +41,6 @@ namespace Sector9.Client
                 Data = new PlayerData();
             }
             Data.Version = S9Constants.Version;
-        }
-
-        public void Save()
-        {
-            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(PlayerData)))
-            {
-                writer.Write(MyAPIGateway.Utilities.SerializeToXML<PlayerData>(Data));
-            }
         }
     }
 }
