@@ -1,0 +1,15 @@
+code:
+- Data/Scripts/**/*.cs
+
+doc:
+- doc/**/*.md
+- README.md
+
+automation:
+- .github/**/*
+- *.bat
+- .gitignore
+- .gitattribute
+
+license:
+- LICENSE
