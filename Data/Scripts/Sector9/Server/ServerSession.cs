@@ -1,4 +1,5 @@
 ﻿using Sandbox.ModAPI;
+using Sector9.Core;
 
 namespace Sector9.Server
 {
@@ -30,8 +31,8 @@ namespace Sector9.Server
             else
             {
                 Data = new ServerData();
-                Data.TestData = "testing!";
             }
+            Data.Version = S9Constants.Version;
         }
 
         public void Save()

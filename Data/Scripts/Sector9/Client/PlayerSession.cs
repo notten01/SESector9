@@ -1,5 +1,6 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Core;
+using Sector9.Server;
 
 namespace Sector9.Client
 {
@@ -8,6 +9,10 @@ namespace Sector9.Client
     /// </summary>
     internal class PlayerSession
     {
+        private PlayerData Data;
+
+        private const string cDataFileName = "S9PlayerSession.xml";
+
         public PlayerSession()
         {
             TryLoad();
@@ -15,7 +20,26 @@ namespace Sector9.Client
 
         private void TryLoad()
         {
-            MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "registered player session");
+            if (MyAPIGateway.Utilities.FileExistsInWorldStorage(cDataFileName, typeof(PlayerData)))
+            {
+                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFileName, typeof(PlayerData)))
+                {
+                    Data = MyAPIGateway.Utilities.SerializeFromXML<PlayerData>(reader.ReadToEnd());
+                }
+            }
+            else
+            {
+                Data = new PlayerData();
+            }
+            Data.Version = S9Constants.Version;
+        }
+
+        public void Save()
+        {
+            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(PlayerData)))
+            {
+                writer.Write(MyAPIGateway.Utilities.SerializeToXML<PlayerData>(Data));
+            }
         }
     }
 }
