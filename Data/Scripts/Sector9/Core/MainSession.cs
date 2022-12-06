@@ -44,10 +44,8 @@ namespace Sector9.Core
 
         public override void SaveData()
         {
-            if (ServerSession != null)
-            {
-                ServerSession.Save();
-            }
+            ServerSession?.Save();
+            PlayerSession?.Save();
         }
 
         private void Startup()
