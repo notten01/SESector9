@@ -26,7 +26,7 @@ namespace Sector9.Core
             {
                 ServerSession = new ServerSession();
             }
-            if (MyAPIGateway.Session.Player != null)
+            if (!MyAPIGateway.Utilities.IsDedicated)
             {
                 PlayerSession = new PlayerSession();
             }
@@ -42,6 +42,14 @@ namespace Sector9.Core
             //todo: cycle tasks here
         }
 
+        public override void SaveData()
+        {
+            if (ServerSession != null)
+            {
+                ServerSession.Save();
+            }
+        }
+
         private void Startup()
         {
             StartupComplete = true;
@@ -49,6 +57,7 @@ namespace Sector9.Core
             MyAPIGateway.Utilities.MessageEntered += SyncManager.ChatMessageRecieved;
             MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.SyncId, SyncManager.NetworkMessageRecieved);
             MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, $"S9 version {S9Constants.Version} loaded!");
+            MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, $"Running server: {ServerSession != null}. Running client: {PlayerSession != null}.");
         }
     }
 }
