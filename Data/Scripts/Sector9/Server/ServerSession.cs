@@ -1,5 +1,8 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Core;
+using Sector9.Core.Logging;
+using System.Collections.Generic;
+using VRageMath;
 
 namespace Sector9.Server
 {
@@ -25,6 +28,32 @@ namespace Sector9.Server
             using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(ServerData)))
             {
                 writer.Write(MyAPIGateway.Utilities.SerializeToXML<ServerData>(Data));
+            }
+        }
+
+        public void Shutdown()
+        {
+            MesApi.UnregisterListener();
+        }
+
+        public bool SpawnShip()
+        {
+            List<string> spawnGroups = new List<string>();
+            spawnGroups.Add("s9-System-bulldog");
+            spawnGroups.Add("SpawnGroups-SystemLigtAtmo");
+            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
+            pos.Add(Vector3D.Up * 20);
+            var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
+
+            if (MesApi.CustomSpawnRequest(spawnGroups, positionMatrix, Vector3D.Zero, true, "TheProgram", S9Constants.SystemName))
+            {
+                Logger.Log($"Spawned ship on {pos.X} {pos.Y} {pos.Z}", Logger.Severity.Info, Logger.LogType.Server);
+                return true;
+            }
+            else
+            {
+                Logger.Log($"Failed to spawn ship on {pos.X} {pos.Y} {pos.Z}!", Logger.Severity.Error, Logger.LogType.Server);
+                return false;
             }
         }
 

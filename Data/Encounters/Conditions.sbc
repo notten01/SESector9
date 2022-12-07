@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>s9-SpawnConditions-attack-atmo</SubtypeId>
+      </Id>
+      <Description>
+        [MES Spawn Conditions]
+        [PlanetRequiresAtmo:true]
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>s9-PersistentSpawnConditions-Environment-2G</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Spawn Conditions]
+
+        [MaxGravity:2]
+
+      </Description>
+
+    </EntityComponent>
+  </EntityComponents>
+
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>s9-SpawnConditions-light</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES Spawn Conditions]
+
+        [ChanceCeiling:250]
+
+        [DroneEncounter:true]
+        [MinDroneDistance:5000]
+
+        [FactionOwner:TheProgram]
+
+        [UseThreatLevelCheck:false]
+
+        [IgnoreCombatPhase:false]
+      </Description>
+
+    </EntityComponent>
+</Definitions>
