@@ -25,7 +25,7 @@ namespace Sector9.Core
             Logger.Log($"Handling custom message '{command.Message}'", Logger.Severity.Info, Logger.LogType.System);
             if (command.Message == "spawn")
             {
-                if (Server.SpawnShip())
+                if (Server.SpawnHostileShip())
                 {
                     MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "Force spawned ship");
                 }
