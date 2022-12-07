@@ -10,5 +10,8 @@ automation:
 - .gitignore
 - .gitattribute
 
+ship:
+- Data/Prefabs/*.sbc
+
 license:
 - LICENSE

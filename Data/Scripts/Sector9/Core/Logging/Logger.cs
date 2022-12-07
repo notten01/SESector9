@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using VRage.Utils;
 
-namespace Sector9.Data.Scripts.Sector9.Core.Logging
+namespace Sector9.Core.Logging
 {
     internal class Logger
     {

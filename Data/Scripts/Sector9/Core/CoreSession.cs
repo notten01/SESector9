@@ -1,6 +1,6 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Client;
-using Sector9.Data.Scripts.Sector9.Core.Logging;
+using Sector9.Core.Logging;
 using Sector9.Multiplayer;
 using Sector9.Server;
 using VRage.Game.Components;
@@ -11,7 +11,7 @@ namespace Sector9.Core
     /// Contains the primary hookup point to the game api
     /// </summary>
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation)]
-    public class MainSession : MySessionComponentBase
+    public class CoreSession : MySessionComponentBase
     {
         private ServerSession ServerSession;
         private PlayerSession PlayerSession;
@@ -22,8 +22,6 @@ namespace Sector9.Core
 
         public override void BeforeStart()
         {
-            CommandHandler = new CommandHandler();
-            SyncManager = new SyncManager(CommandHandler);
             if (MyAPIGateway.Multiplayer.IsServer)
             {
                 ServerSession = new ServerSession();
@@ -32,6 +30,8 @@ namespace Sector9.Core
             {
                 PlayerSession = new PlayerSession();
             }
+            CommandHandler = new CommandHandler(ServerSession, PlayerSession);
+            SyncManager = new SyncManager(CommandHandler);
             Logger.SetLogTypes(ServerSession?.EnableLog == true, PlayerSession?.EnableLog == true);
             Logger.Log($"Startup complete! Server: {ServerSession != null}. Player: {PlayerSession != null}. version: {S9Constants.Version}", Logger.Severity.Info, Logger.LogType.System);
             Logger.CycleLogs();
@@ -67,6 +67,9 @@ namespace Sector9.Core
         protected override void UnloadData()
         {
             Logger.Log("Shutting down", Logger.Severity.Info, Logger.LogType.System);
+            MyAPIGateway.Utilities.MessageEntered -= SyncManager.ChatMessageRecieved;
+            MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncId, SyncManager.NetworkMessageRecieved);
+            ServerSession?.Shutdown();
             Logger.CycleLogsBlocking();
         }
 
