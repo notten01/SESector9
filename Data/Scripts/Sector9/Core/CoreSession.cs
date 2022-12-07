@@ -45,12 +45,14 @@ namespace Sector9.Core
             }
 
             //todo: cycle tasks here
+
+            RotateLog();
         }
 
-        public override void UpdateAfterSimulation()
+        private void RotateLog()
         {
             LogRotationCounter++;
-            if (LogRotationCounter > 600)
+            if (LogRotationCounter > 600) //600 rotations is 1 second if simspeed == 1
             {
                 Logger.CycleLogs();
                 LogRotationCounter = 0;
