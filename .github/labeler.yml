@@ -10,14 +10,8 @@ automation:
 - .gitignore
 - .gitattribute
 
-definitions:
-- any: ['Data/**/*.sbc', '!Data/Encounters/Prefabs/*', '!Data/Encounters/Behaviors/*']
-
 ship:
-- Data/Encounters/Prefabs/*.sbc
-
-behavior:
-- Data/Encounters/Behaviors/*.sbc
+- Data/Prefabs/*.sbc
 
 license:
 - LICENSE
