@@ -1,5 +1,8 @@
 ﻿using Sandbox.ModAPI;
+using Sector9.Api;
 using Sector9.Core;
+using Sector9.Server.Units;
+using Server.Data;
 using System.Collections.Generic;
 using VRage.Game.ModAPI;
 using VRage.ModAPI;
@@ -10,18 +13,25 @@ namespace Sector9.Server
     /// <summary>
     /// Session for the server, keeping track of game stats. Can exist togheter with <see cref="PlayerSession"/> if its a locally hosted game
     /// </summary>
-    internal class ServerSession
+    public class ServerSession : ITickable
     {
         private const string cDataFileName = "S9ServerSession.xml";
         private ServerData Data;
         private readonly FactionManager Factions;
         private readonly GridSpawner Spawner;
+        public UnitCommander UnitCommander { get; }
+        public Wc WeaponsCore { get; }
+        public DefinitionLibrary BlockLibrary { get; private set; }
 
         public ServerSession()
         {
             TryLoad();
             Factions = new FactionManager();
             Spawner = new GridSpawner();
+            WeaponsCore = new Wc();
+            WeaponsCore.Load(null, true);
+            BlockLibrary = new DefinitionLibrary(WeaponsCore);
+            UnitCommander = new UnitCommander();
         }
 
         public bool EnableLog => Data.EnableLog;
@@ -40,13 +50,14 @@ namespace Sector9.Server
         public void Shutdown()
         {
             Factions.Shutdown();
+            WeaponsCore.Unload();
         }
 
         /// <summary>
         /// Spawn a ship belonging to the hostile faction
         /// </summary>
         /// <returns>True or false is the spawning was successfull</returns>
-        public bool SpawnHostileShip()
+        public List<IMyEntity> SpawnHostileShip()
         {
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
             pos.Add(Vector3D.Up * 20);
@@ -59,9 +70,9 @@ namespace Sector9.Server
                 {
                     Factions.AssignGridToHostileFaction(grid as IMyCubeGrid);
                 }
-                return true;
+                return createdGrids;
             }
-            return false;
+            return null;
         }
 
         private void TryLoad()
@@ -78,6 +89,11 @@ namespace Sector9.Server
                 Data = new ServerData();
             }
             Data.Version = S9Constants.Version;
+        }
+
+        public void Tick()
+        {
+            UnitCommander.Tick();
         }
     }
 }

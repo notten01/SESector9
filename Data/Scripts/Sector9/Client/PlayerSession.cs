@@ -7,7 +7,7 @@ namespace Sector9.Client
     /// <summary>
     /// session handing player related items. Can existin togheter with <see cref="ServerSession"/> if its locally hosted
     /// </summary>
-    internal class PlayerSession
+    public class PlayerSession : ITickable
     {
         private const string cDataFileName = "S9PlayerSession.xml";
         private PlayerData Data;
@@ -25,6 +25,11 @@ namespace Sector9.Client
             {
                 writer.Write(MyAPIGateway.Utilities.SerializeToXML<PlayerData>(Data));
             }
+        }
+
+        public void Tick()
+        {
+            //tick
         }
 
         private void TryLoad()

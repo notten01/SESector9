@@ -79,6 +79,8 @@ namespace Sector9.Core.Logging
             {
                 MessageQueue.Add(new LogMessage(message, severity));
             }
+
+            ProcessQueue(); //todo remove once done with debugging
         }
 
         public static void ProcessQueue()

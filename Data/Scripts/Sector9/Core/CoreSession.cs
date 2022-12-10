@@ -13,8 +13,8 @@ namespace Sector9.Core
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation)]
     public class CoreSession : MySessionComponentBase
     {
-        private ServerSession ServerSession;
-        private PlayerSession PlayerSession;
+        public ServerSession ServerSession { get; private set; }
+        public PlayerSession PlayerSession { get; private set; }
         private CommandHandler CommandHandler;
         private bool StartupComplete = false;
         private SyncManager SyncManager;
@@ -30,7 +30,7 @@ namespace Sector9.Core
             {
                 PlayerSession = new PlayerSession();
             }
-            CommandHandler = new CommandHandler(ServerSession, PlayerSession);
+            CommandHandler = new CommandHandler(this);
             SyncManager = new SyncManager(CommandHandler);
             Logger.SetLogTypes(ServerSession?.EnableLog == true, PlayerSession?.EnableLog == true);
             Logger.Log($"Startup complete! Server: {ServerSession != null}. Player: {PlayerSession != null}. version: {S9Constants.Version}", Logger.Severity.Info, Logger.LogType.System);
@@ -44,7 +44,8 @@ namespace Sector9.Core
                 Startup();
             }
 
-            //todo: cycle tasks here
+            ServerSession?.Tick();
+            PlayerSession?.Tick();
 
             RotateLog();
         }
@@ -69,8 +70,11 @@ namespace Sector9.Core
         protected override void UnloadData()
         {
             Logger.Log("Shutting down", Logger.Severity.Info, Logger.LogType.System);
-            MyAPIGateway.Utilities.MessageEntered -= SyncManager.ChatMessageRecieved;
-            MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncId, SyncManager.NetworkMessageRecieved);
+            if (SyncManager != null)
+            {
+                MyAPIGateway.Utilities.MessageEntered -= SyncManager.ChatMessageRecieved;
+                MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncId, SyncManager.NetworkMessageRecieved);
+            }
             ServerSession?.Shutdown();
             Logger.CycleLogsBlocking();
         }
