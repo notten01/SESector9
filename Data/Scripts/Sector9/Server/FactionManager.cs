@@ -64,6 +64,7 @@ namespace Sector9.Server
             MyAPIGateway.Session.Factions.DeclareWar(humanFactiopn.FactionId, hostileFaciton.FactionId);
 
             MyAPIGateway.Session.Factions.FactionCreated += FactionCreated;
+            Logger.Log("Stared faction manager", Logger.Severity.Info, Logger.LogType.Server);
         }
 
         public void Shutdown()

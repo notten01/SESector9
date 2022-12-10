@@ -23,10 +23,7 @@ namespace Sector9.Server
         public GridSpawner()
         {
             DefinitionsCache = MyDefinitionManager.Static.GetPrefabDefinitions();
-            foreach (var definition in DefinitionsCache)
-            {
-                Logger.Log($"Founnd grid definition {definition.Key}", Logger.Severity.Info, Logger.LogType.Server);
-            }
+            Logger.Log("Started grid spawner", Logger.Severity.Info, Logger.LogType.Server);
         }
 
         /// <summary>

@@ -1,8 +1,10 @@
 ﻿using Sandbox.ModAPI;
-using Sector9.Client;
 using Sector9.Core.Logging;
 using Sector9.Multiplayer;
-using Sector9.Server;
+using Sector9.Server.Units;
+using Sector9.Server.Units.Behaviours;
+using System.Collections.Generic;
+using VRage.ModAPI;
 
 namespace Sector9.Core
 {
@@ -11,13 +13,11 @@ namespace Sector9.Core
     /// </summary>
     internal class CommandHandler
     {
-        private readonly ServerSession Server;
-        private readonly PlayerSession Player;
+        private readonly CoreSession Core;
 
-        public CommandHandler(ServerSession server, PlayerSession player)
+        public CommandHandler(CoreSession core)
         {
-            Server = server;
-            Player = player;
+            Core = core;
         }
 
         public void HandleCommand(CommandMessage command)
@@ -25,8 +25,10 @@ namespace Sector9.Core
             Logger.Log($"Handling custom message '{command.Message}'", Logger.Severity.Info, Logger.LogType.System);
             if (command.Message == "spawn")
             {
-                if (Server.SpawnHostileShip())
+                List<IMyEntity> shipParts = Core.ServerSession.SpawnHostileShip();
+                if (shipParts != null)
                 {
+                    Unit unit = new Unit(shipParts, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new PassiveBehaviour());
                     MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "Force spawned ship");
                 }
                 else
