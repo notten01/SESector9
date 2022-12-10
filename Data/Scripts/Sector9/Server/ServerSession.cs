@@ -21,13 +21,15 @@ namespace Sector9.Server
         private readonly GridSpawner Spawner;
         public UnitCommander UnitCommander { get; }
         public Wc WeaponsCore { get; }
+        public Planets Planets { get; }
         public DefinitionLibrary BlockLibrary { get; private set; }
 
         public ServerSession()
         {
             TryLoad();
             Factions = new FactionManager();
-            Spawner = new GridSpawner();
+            Planets = new Planets();
+            Spawner = new GridSpawner(Planets);
             WeaponsCore = new Wc();
             WeaponsCore.Load(null, true);
             BlockLibrary = new DefinitionLibrary(WeaponsCore);
