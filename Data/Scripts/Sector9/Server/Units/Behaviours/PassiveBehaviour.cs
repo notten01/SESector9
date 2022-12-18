@@ -1,6 +1,4 @@
-﻿using Sandbox.Game.Entities;
-
-namespace Sector9.Server.Units.Behaviours
+﻿namespace Sector9.Server.Units.Behaviours
 {
     /// <summary>
     /// test behaviour that does absolutely nothing
@@ -15,7 +13,28 @@ namespace Sector9.Server.Units.Behaviours
             }
         }
 
-        public void AttachRemoteControl(MyRemoteControl control)
+        public bool IsComplete
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return "passive";
+            }
+        }
+
+        public void AttachPilot(Pilot pilot)
+        {
+            //empty
+        }
+
+        public void Interrupt()
         {
             //empty
         }

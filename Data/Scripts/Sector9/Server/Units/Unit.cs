@@ -4,6 +4,8 @@ using Sandbox.ModAPI;
 using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
+using Sector9.Server.Units.Behaviours;
+using Sector9.Server.Units.Control;
 using Server.Data;
 using System;
 using System.Collections.Generic;
@@ -22,31 +24,62 @@ namespace Sector9.Server.Units
         private readonly Wc WeaponsCore;
         private readonly DefinitionLibrary Library;
         private readonly UnitCommander Commander;
+        private readonly Planets Planets;
 
         private MyRemoteControl RemoteControl;
         private Task InitWorker;
         private List<Thruster> Thrusters;
         private Provider Provider;
+        private Pilot Pilot;
 
         private bool Init = false;
         private int ResuplyCounter = 0;
         private int BehaviourCounter = 0;
         public bool IsValid { get; private set; }
 
-        private readonly IBehaviour ActiveBehaviour;
+        private IBehaviour ActiveBehaviour;
+        private readonly ICaptain Captain;
 
-        public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, IBehaviour behaviour)
+        public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, ICaptain captain, Planets planets) : this(grids, commander, prefabName, weaponsCore, library, planets)
         {
+            Captain = captain;
+        }
+
+        public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, IBehaviour behaviour, Planets planets) : this(grids, commander, prefabName, weaponsCore, library, planets)
+        {
+            ActiveBehaviour = behaviour;
+            ActiveBehaviour.SetUnit(this);
+            Captain = null;
+        }
+
+        private Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, Planets planets)
+        {
+            Planets = planets;
             Commander = commander;
             PrefabName = prefabName;
             WeaponsCore = weaponsCore;
             Grids = grids;
             Library = library;
-            ActiveBehaviour = behaviour;
-            ActiveBehaviour.SetUnit(this);
             InitWorker = MyAPIGateway.Parallel.StartBackground(Initialize);
             IsValid = true;
             commander.RegisterUnit(this);
+        }
+
+        internal void SetBehaviour(IBehaviour behaviour)
+        {
+            if (ActiveBehaviour != null && !ActiveBehaviour.IsReady)
+            {
+                ActiveBehaviour.Interrupt();
+            }
+            Logger.Log($"Unit {RemoteControl.CubeGrid.EntityId} Switching to new behaviour {behaviour.Name}", Logger.Severity.Info, Logger.LogType.Server);
+            ActiveBehaviour = behaviour;
+            ActiveBehaviour.SetUnit(this);
+            ActiveBehaviour.AttachPilot(Pilot);
+        }
+
+        public bool IsExecutingBehaviour()
+        {
+            return ActiveBehaviour != null && !ActiveBehaviour.IsComplete;
         }
 
         public void Tick()
@@ -85,15 +118,10 @@ namespace Sector9.Server.Units
                 return;
             }
 
-            if (ActiveBehaviour == null || Provider == null)
+            if (ActiveBehaviour != null && !ActiveBehaviour.IsReady)
             {
-                Logger.Log($"UNIT incorrect data: behaviour: {ActiveBehaviour != null}. provider: {Provider != null}", Logger.Severity.Fatal, Logger.LogType.Server);
-                return;
-            }
-
-            if (!ActiveBehaviour.IsReady)
-            {
-                ActiveBehaviour.AttachRemoteControl(RemoteControl);
+                ActiveBehaviour.AttachPilot(Pilot);
+                BehaviourCounter = int.MaxValue; //ensure it will trigger the first cycle of the behaviour
             }
 
             if (ResuplyCounter > 600)
@@ -108,7 +136,8 @@ namespace Sector9.Server.Units
 
             if (BehaviourCounter > 60)
             {
-                ActiveBehaviour.Tick();
+                Captain?.Tick();
+                ActiveBehaviour?.Tick();
                 BehaviourCounter = 0;
             }
             else
@@ -128,6 +157,11 @@ namespace Sector9.Server.Units
                 Thrusters.Add(new Thruster(thrust));
             }
             Provider = new Provider(fatblocks, WeaponsCore, Library);
+            Pilot = new Pilot(RemoteControl, Planets);
+            if (Captain != null)
+            {
+                Captain.SetCaptainData(RemoteControl, this);
+            }
         }
     }
 }

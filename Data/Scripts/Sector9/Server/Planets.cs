@@ -45,5 +45,10 @@ namespace Sector9.Server
             var grafity = ent.GetPosition();
             return new Vector3D(grafity.X - location.X, grafity.Y - location.Y, grafity.Z - location.Z);
         }
+
+        public static Vector3D Reverse(Vector3D grafity)
+        {
+            return new Vector3D(grafity.X * -1, grafity.Y * -1, grafity.Z * -1);
+        }
     }
 }
