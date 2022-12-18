@@ -75,8 +75,7 @@ namespace Sector9.Server
             {
                 return new MyPositionAndOrientation(location);
             }
-            Vector3D grafity = Planets.GetGravityDirection(planet, position);
-            Vector3D reversedGravityVector = new Vector3D(grafity.X * -1, grafity.Y * -1, grafity.Z * -1);
+            Vector3D reversedGravityVector = Planets.Reverse(Planets.GetGravityDirection(planet, position));
             Vector3D forwardVector;
             reversedGravityVector.CalculatePerpendicularVector(out forwardVector);
             Vector3D targetVector = planet.GetClosestSurfacePointGlobal(ref position);

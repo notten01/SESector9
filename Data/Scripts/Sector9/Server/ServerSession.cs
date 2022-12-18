@@ -62,7 +62,7 @@ namespace Sector9.Server
         public List<IMyEntity> SpawnHostileShip()
         {
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
-            pos.Add(Vector3D.Up * 20);
+            pos.Add(new Vector3(10, 10, 10));
             var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
             List<IMyEntity> createdGrids;
             Spawner.TrySpawnGrid("QnVsbGRvZyBicmF3bGVy", positionMatrix, out createdGrids);
@@ -75,6 +75,16 @@ namespace Sector9.Server
                 return createdGrids;
             }
             return null;
+        }
+
+        public List<IMyEntity> TestSpawn(string name)
+        {
+            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
+            pos.Add(Vector3D.Up * 20);
+            var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
+            List<IMyEntity> createdGrids;
+            Spawner.TrySpawnGrid(name, positionMatrix, out createdGrids);
+            return createdGrids;
         }
 
         private void TryLoad()

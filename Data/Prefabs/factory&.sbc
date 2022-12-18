@@ -1,0 +1,3741 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Prefabs>
+    <Prefab>
+      <Id>
+        <TypeId>MyObjectBuilder_PrefabDefinition</TypeId>
+        <SubtypeId>factory&amp;</SubtypeId>
+      </Id>
+      <CubeGrids>
+        <CubeGrid>
+          <EntityId>104525179834757248</EntityId>
+          <PersistentFlags>CastShadows InScene</PersistentFlags>
+          <PositionAndOrientation>
+            <Position x="395" y="-355" z="295" />
+            <Forward x="0" y="-0" z="-1" />
+            <Up x="0" y="1" z="0" />
+          </PositionAndOrientation>
+          <GridSizeEnum>Large</GridSizeEnum>
+          <CubeBlocks>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_SolarPanel">
+              <SubtypeName>LargeBlockSolarPanel</SubtypeName>
+              <EntityId>84281264459388453</EntityId>
+              <Min x="-1" y="5" z="3" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Solar Panel 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCornerInv</SubtypeName>
+              <Min x="1" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="9" y="0" z="4" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="8" y="0" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="3" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="5" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="5" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="4" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="4" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="4" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="4" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="0" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="6" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="4" y="1" z="5" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Refinery">
+              <SubtypeName>LargeRefinery</SubtypeName>
+              <EntityId>82070836934207159</EntityId>
+              <Min x="3" y="1" z="-2" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Refinery 2</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <InputInventory>
+                <Items />
+                <nextItemId>0</nextItemId>
+              </InputInventory>
+              <OutputInventory>
+                <Items />
+                <nextItemId>0</nextItemId>
+              </OutputInventory>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="4" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="5" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="1" z="5" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="5" z="5" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="2" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="1" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="5" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="5" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_GravityGenerator">
+              <SubtypeName />
+              <EntityId>122448685381868207</EntityId>
+              <Min x="5" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <FieldSize x="150" y="150" z="150" />
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Reactor">
+              <SubtypeName>LargeBlockSmallGenerator</SubtypeName>
+              <EntityId>86263714910681354</EntityId>
+              <Min x="5" y="2" z="1" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Small Reactor 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Inventory>
+                <Items>
+                  <MyObjectBuilder_InventoryItem>
+                    <Amount>100</Amount>
+                    <PhysicalContent xsi:type="MyObjectBuilder_Ingot">
+                      <SubtypeName>Uranium</SubtypeName>
+                    </PhysicalContent>
+                    <ItemId>0</ItemId>
+                    <AmountDecimal>100</AmountDecimal>
+                  </MyObjectBuilder_InventoryItem>
+                </Items>
+                <nextItemId>1</nextItemId>
+              </Inventory>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTube</SubtypeName>
+              <EntityId>84699314887980742</EntityId>
+              <Min x="5" y="4" z="1" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Conveyor">
+              <SubtypeName>LargeBlockConveyor</SubtypeName>
+              <EntityId>78096830265339928</EntityId>
+              <Min x="5" y="3" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>99141811321677133</EntityId>
+              <Min x="5" y="3" z="2" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>97644520858155235</EntityId>
+              <Min x="5" y="2" z="2" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CargoContainer">
+              <SubtypeName>LargeBlockLargeContainer</SubtypeName>
+              <EntityId>137117844654705844</EntityId>
+              <Min x="6" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Inventory>
+                <Items />
+                <nextItemId>0</nextItemId>
+              </Inventory>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Conveyor">
+              <SubtypeName>LargeBlockConveyor</SubtypeName>
+              <EntityId>85974090130857518</EntityId>
+              <Min x="5" y="5" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>81191515211649699</EntityId>
+              <Min x="5" y="5" z="3" />
+              <BlockOrientation Forward="Right" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="0" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="2" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="4" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="0" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="0" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="0" z="0" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="6" y="0" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="1" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="0" z="2" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="0" z="1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="0" z="3" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="5" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="2" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="8" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="5" z="0" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="4" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="3" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="3" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="6" z="3" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="6" z="4" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Conveyor">
+              <SubtypeName>LargeBlockConveyor</SubtypeName>
+              <EntityId>79806836498071445</EntityId>
+              <Min x="5" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="6" z="5" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="4" z="0" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Door">
+              <SubtypeName />
+              <EntityId>142442224688155989</EntityId>
+              <Min x="1" y="2" z="4" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <OpenSound>ArcBlockDoorSmallOpen</OpenSound>
+              <CloseSound>ArcBlockDoorSmallClose</CloseSound>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="6" z="2" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="6" z="1" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="3" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="3" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeStairs</SubtypeName>
+              <Min x="2" y="1" z="4" />
+              <BlockOrientation Forward="Right" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="3" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="1" y="3" z="0" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="4" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="2" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="2" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="4" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="3" y="6" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="0" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="1" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="2" y="1" z="7" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="3" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>Window2x3FlatInv</SubtypeName>
+              <Min x="3" y="2" z="6" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="5" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="4" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="3" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="9" y="0" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="1" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="2" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="3" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="4" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="5" z="0" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="5" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="4" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="3" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="2" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="1" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="1" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="6" z="3" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="6" z="2" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="6" z="1" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="6" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="6" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="6" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="6" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="6" y="6" z="5" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="5" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="7" y="6" z="4" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="8" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="8" y="0" z="4" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="6" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="6" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="6" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="3" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="4" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="2" y="5" z="7" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Warhead">
+              <SubtypeName>LargeWarhead</SubtypeName>
+              <EntityId>82086329077166526</EntityId>
+              <Min x="2" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Warhead 6</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <CountdownMs>10000</CountdownMs>
+              <IsArmed>false</IsArmed>
+              <IsCountingDown>false</IsCountingDown>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="1" z="3" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="1" z="7" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="5" z="7" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="3" y="5" z="7" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Warhead">
+              <SubtypeName>LargeWarhead</SubtypeName>
+              <EntityId>143723696857640262</EntityId>
+              <Min x="6" y="1" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Warhead 7</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <CountdownMs>10000</CountdownMs>
+              <IsArmed>false</IsArmed>
+              <IsCountingDown>false</IsCountingDown>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="2" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="3" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="4" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="5" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="4" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="3" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="2" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="1" z="6" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTube</SubtypeName>
+              <EntityId>135049738133337259</EntityId>
+              <Min x="4" y="3" z="1" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="4" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="3" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="1" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="2" z="5" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="2" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="4" y="5" z="7" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="5" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="5" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="5" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="5" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ReflectorLight">
+              <SubtypeName>LargeBlockFrontLight</SubtypeName>
+              <EntityId>82004747647316482</EntityId>
+              <Min x="4" y="5" z="3" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Radius>2.8</Radius>
+              <ColorRed>0.101960786</ColorRed>
+              <ColorGreen>0.478431374</ColorGreen>
+              <ColorBlue>0.20784314</ColorBlue>
+              <Falloff>1</Falloff>
+              <Intensity>2</Intensity>
+              <BlinkIntervalSeconds>0</BlinkIntervalSeconds>
+              <BlinkLenght>10</BlinkLenght>
+              <BlinkOffset>0</BlinkOffset>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="4" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="4" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_MotorSuspension">
+              <SubtypeName>Suspension1x1</SubtypeName>
+              <EntityId>106199508005735767</EntityId>
+              <Min x="9" y="4" z="3" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Wheel Suspension 1x1 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <RotorEntityId>0</RotorEntityId>
+              <SteerAngle>0</SteerAngle>
+              <Damping>0.02</Damping>
+              <Strength>0.04</Strength>
+              <Propulsion>true</Propulsion>
+              <Friction>0.1875</Friction>
+              <Power>1</Power>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="0" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="3" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_MotorSuspension">
+              <SubtypeName>Suspension1x1</SubtypeName>
+              <EntityId>89862559067646555</EntityId>
+              <Min x="9" y="3" z="2" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Wheel Suspension 1x1 4</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <RotorEntityId>0</RotorEntityId>
+              <SteerAngle>0</SteerAngle>
+              <Damping>0.02</Damping>
+              <Strength>0.04</Strength>
+              <Propulsion>true</Propulsion>
+              <Friction>0.1875</Friction>
+              <Power>1</Power>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="3" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="7" y="6" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_MotorSuspension">
+              <SubtypeName>Suspension1x1</SubtypeName>
+              <EntityId>82337602525416654</EntityId>
+              <Min x="9" y="2" z="1" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Wheel Suspension 1x1 5</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <RotorEntityId>0</RotorEntityId>
+              <SteerAngle>0</SteerAngle>
+              <Damping>0.02</Damping>
+              <Strength>0.04</Strength>
+              <Propulsion>true</Propulsion>
+              <Friction>0.1875</Friction>
+              <Power>1</Power>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="2" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="2" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="1" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="1" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="9" y="1" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>112579236670466449</EntityId>
+              <Min x="3" y="3" z="1" />
+              <BlockOrientation Forward="Up" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="7" y="5" z="5" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTube</SubtypeName>
+              <EntityId>98005630962462026</EntityId>
+              <Min x="3" y="2" z="2" />
+              <BlockOrientation Forward="Left" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>81460576057392890</EntityId>
+              <Min x="3" y="1" z="2" />
+              <BlockOrientation Forward="Left" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTubeCurved</SubtypeName>
+              <EntityId>141904235923943347</EntityId>
+              <Min x="3" y="3" z="2" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="8" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="7" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="6" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="5" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="3" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="5" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="4" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="4" y="3" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="2" y="2" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="3" z="-2" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="2" y="3" z="-1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="2" y="0" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="6" y="3" z="-1" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="5" y="0" z="-1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="6" y="0" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="0" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="5" y="3" z="-1" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="2" y="3" z="-2" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="1" y="3" z="-1" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="2" y="4" z="-1" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="1" y="0" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="2" y="0" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="4" z="-1" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="9" y="6" z="0" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="1" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="2" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="3" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="4" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="9" y="5" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="9" y="6" z="4" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="2" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="1" z="0" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="0" y="2" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="0" y="2" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="-1" y="2" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="-2" y="2" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="-2" y="2" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkPlate</SubtypeName>
+              <Min x="-2" y="2" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="0" y="2" z="5" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-1" y="2" z="5" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-2" y="2" z="5" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="0" y="2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-1" y="2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-2" y="2" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-3" y="2" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-3" y="2" z="4" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalk</SubtypeName>
+              <Min x="-3" y="2" z="2" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkCorner</SubtypeName>
+              <Min x="-3" y="2" z="1" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeSteelCatwalkCorner</SubtypeName>
+              <Min x="-3" y="2" z="5" />
+              <BlockOrientation Forward="Backward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="0" y="1" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-1" y="1" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-2" y="1" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="1" z="4" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="1" z="4" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-2" y="1" z="4" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="1" z="2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="1" z="2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-2" y="1" z="2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-3" y="1" z="3" />
+              <BlockOrientation Forward="Up" Up="Left" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="-3" y="1" z="2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="-3" y="1" z="4" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="0" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-1" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-2" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-3" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-4" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="-5" y="4" z="3" />
+              <IntegrityPercent>0.225</IntegrityPercent>
+              <BuildPercent>0.225</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="2" y="1" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="2" y="2" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="5" y="1" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="5" y="2" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="1" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="6" y="2" z="-1" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="3" y="3" z="-2" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="4" y="3" z="-2" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="4" y="4" z="-1" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="3" y="4" z="-1" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="3" y="0" z="-1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="4" y="0" z="-1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="4" y="0" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="3" y="0" z="-2" />
+              <BlockOrientation Forward="Backward" Up="Down" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorBlock</SubtypeName>
+              <Min x="1" y="5" z="3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_SolarPanel">
+              <SubtypeName>LargeBlockSolarPanel</SubtypeName>
+              <EntityId>124789587493785256</EntityId>
+              <Min x="-3" y="5" z="3" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Solar Panel 4</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_SolarPanel">
+              <SubtypeName>LargeBlockSolarPanel</SubtypeName>
+              <EntityId>80814929680917786</EntityId>
+              <Min x="-5" y="5" z="3" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Solar Panel 5</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCorner</SubtypeName>
+              <Min x="5" y="1" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="5" y="1" z="4" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="2" y="4" z="7" />
+              <BlockOrientation Forward="Left" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="2" y="2" z="7" />
+              <BlockOrientation Forward="Left" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="2" y="3" z="7" />
+              <BlockOrientation Forward="Left" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="5" y="2" z="7" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="5" y="3" z="7" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="5" y="4" z="7" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="3" y="1" z="7" />
+              <BlockOrientation Forward="Down" Up="Backward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="4" y="1" z="7" />
+              <BlockOrientation Forward="Down" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ConveyorConnector">
+              <SubtypeName>ConveyorTube</SubtypeName>
+              <EntityId>143209654854602735</EntityId>
+              <Min x="5" y="5" z="2" />
+              <BlockOrientation Forward="Left" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeWindowEdge</SubtypeName>
+              <Min x="3" y="1" z="5" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Cockpit">
+              <SubtypeName>LargeBlockCockpit</SubtypeName>
+              <EntityId>128908497892807367</EntityId>
+              <Min x="2" y="1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Control Station 2</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <UseSingleWeaponMode>false</UseSingleWeaponMode>
+              <Toolbar>
+                <ToolbarType>Character</ToolbarType>
+                <SelectedSlot xsi:nil="true" />
+                <Slots />
+                <ColorMaskHSVList>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-1</Y>
+                    <Z>0</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>0</Y>
+                    <Z>0.05</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.333333343</X>
+                    <Y>-0.48</Y>
+                    <Z>-0.25</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.575</X>
+                    <Y>0</Y>
+                    <Z>0</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.122222222</X>
+                    <Y>-0.1</Y>
+                    <Z>0.26</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-0.95</Y>
+                    <Z>0.4</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-0.96</Y>
+                    <Z>-0.5</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.530555546</X>
+                    <Y>0.83</Y>
+                    <Z>0.45</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-1</Y>
+                    <Z>-0.5</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.51111114</X>
+                    <Y>-0.82</Y>
+                    <Z>0.03</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.575</X>
+                    <Y>0.15</Y>
+                    <Z>0.2</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0.122222222</X>
+                    <Y>0.87</Y>
+                    <Z>0.29</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-0.799999952</Y>
+                    <Z>0.6</Z>
+                  </Vector3>
+                  <Vector3>
+                    <X>0</X>
+                    <Y>-0.809999943</Y>
+                    <Z>-0.3</Z>
+                  </Vector3>
+                </ColorMaskHSVList>
+              </Toolbar>
+              <SelectedGunId xsi:nil="true" />
+              <PilotRelativeWorld>
+                <Position x="-1.9692347049713135" y="-0.656339704990387" z="2.9101908206939697" />
+                <Forward x="0.531552255" y="6.1422503E-07" z="-0.8470255" />
+                <Up x="-6.316344E-07" y="1" z="3.28772074E-07" />
+              </PilotRelativeWorld>
+              <PilotGunDefinition xsi:nil="true" />
+              <IsInFirstPersonView>false</IsInFirstPersonView>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCornerInv</SubtypeName>
+              <Min x="2" y="5" z="1" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCornerInv</SubtypeName>
+              <Min x="8" y="5" z="1" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="2" y="5" z="2" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="2" y="4" z="1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="3" y="5" z="1" />
+              <BlockOrientation Forward="Up" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="7" y="5" z="1" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="8" y="5" z="2" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="8" y="4" z="1" />
+              <BlockOrientation Forward="Up" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCornerInv</SubtypeName>
+              <Min x="4" y="5" z="5" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCornerInv</SubtypeName>
+              <Min x="2" y="5" z="4" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="3" y="5" z="4" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="2" y="5" z="3" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="2" y="4" z="4" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeHeavyBlockArmorCorner</SubtypeName>
+              <Min x="5" y="5" z="5" />
+              <BlockOrientation Forward="Backward" Up="Right" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="8" y="5" z="-1" />
+              <BlockOrientation Forward="Left" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="8" y="4" z="-1" />
+              <BlockOrientation Forward="Left" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="8" y="3" z="-1" />
+              <BlockOrientation Forward="Left" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="8" y="2" z="-1" />
+              <BlockOrientation Forward="Left" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="8" y="1" z="-1" />
+              <BlockOrientation Forward="Left" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="2" y="5" z="-1" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="3" y="5" z="-1" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="4" y="5" z="-1" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="5" y="5" z="-1" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeCoverWall</SubtypeName>
+              <Min x="6" y="5" z="-1" />
+              <BlockOrientation Forward="Up" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_ShipConnector">
+              <SubtypeName>Connector</SubtypeName>
+              <EntityId>137468582513258356</EntityId>
+              <Min x="3" y="1" z="-3" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0.5</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Inventory>
+                <Items />
+                <nextItemId>0</nextItemId>
+              </Inventory>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Thrust">
+              <SubtypeName>LargeBlockSmallThrust</SubtypeName>
+              <EntityId>72066639528572099</EntityId>
+              <Min x="4" y="-1" z="1" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Thrust">
+              <SubtypeName>LargeBlockSmallThrust</SubtypeName>
+              <EntityId>100726403425025935</EntityId>
+              <Min x="2" y="-1" z="3" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Small Thruster 2</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Thrust">
+              <SubtypeName>LargeBlockSmallThrust</SubtypeName>
+              <EntityId>129533363470078738</EntityId>
+              <Min x="4" y="-2" z="3" />
+              <BlockOrientation Forward="Down" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Small Thruster 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Thrust">
+              <SubtypeName>LargeBlockSmallThrust</SubtypeName>
+              <EntityId>120632510498670619</EntityId>
+              <Min x="4" y="-1" z="4" />
+              <BlockOrientation Forward="Backward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Small Thruster 4</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_Thrust">
+              <SubtypeName>LargeBlockSmallThrust</SubtypeName>
+              <EntityId>139587982089412838</EntityId>
+              <Min x="5" y="-1" z="3" />
+              <BlockOrientation Forward="Right" Up="Backward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Small Thruster 6</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="5" y="-1" z="4" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="5" y="-1" z="2" />
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="3" y="-1" z="2" />
+              <BlockOrientation Forward="Forward" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorCornerInv</SubtypeName>
+              <Min x="3" y="-1" z="4" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_LargeGatlingTurret">
+              <SubtypeName />
+              <EntityId>73026623904536338</EntityId>
+              <Min x="4" y="7" z="2" />
+              <BlockOrientation Forward="Left" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Gatling Turret 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Inventory>
+                <Items>
+                  <MyObjectBuilder_InventoryItem>
+                    <Amount>200</Amount>
+                    <PhysicalContent xsi:type="MyObjectBuilder_AmmoMagazine">
+                      <SubtypeName>NATO_25x184mm</SubtypeName>
+                      <ProjectilesCount>0</ProjectilesCount>
+                    </PhysicalContent>
+                    <ItemId>0</ItemId>
+                    <AmountDecimal>200</AmountDecimal>
+                  </MyObjectBuilder_InventoryItem>
+                </Items>
+                <nextItemId>1</nextItemId>
+              </Inventory>
+              <RemainingAmmo>0</RemainingAmmo>
+              <Target>0</Target>
+              <IsPotentialTarget>true</IsPotentialTarget>
+              <PreviousControlledEntityId xsi:nil="true" />
+              <Rotation>0</Rotation>
+              <Elevation>0</Elevation>
+              <IsShooting>false</IsShooting>
+              <GunBase>
+                <RemainingAmmo>0</RemainingAmmo>
+                <CurrentAmmoMagazineName>NATO_25x184mm</CurrentAmmoMagazineName>
+                <RemainingAmmosList />
+              </GunBase>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="4" z="4" />
+              <IntegrityPercent>0.12</IntegrityPercent>
+              <BuildPercent>0.12</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="4" z="4" />
+              <IntegrityPercent>0.16</IntegrityPercent>
+              <BuildPercent>0.16</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-2" y="4" z="4" />
+              <IntegrityPercent>0.12</IntegrityPercent>
+              <BuildPercent>0.12</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-3" y="4" z="4" />
+              <IntegrityPercent>0.24</IntegrityPercent>
+              <BuildPercent>0.24</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="3" z="5" />
+              <IntegrityPercent>0.2</IntegrityPercent>
+              <BuildPercent>0.2</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="1" y="3" z="6" />
+              <BlockOrientation Forward="Forward" Up="Left" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="3" z="5" />
+              <IntegrityPercent>0.2</IntegrityPercent>
+              <BuildPercent>0.2</BuildPercent>
+              <BlockOrientation Forward="Forward" Up="Up" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="4" z="2" />
+              <IntegrityPercent>0.2</IntegrityPercent>
+              <BuildPercent>0.2</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="4" z="2" />
+              <IntegrityPercent>0.16</IntegrityPercent>
+              <BuildPercent>0.16</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-2" y="4" z="2" />
+              <IntegrityPercent>0.12</IntegrityPercent>
+              <BuildPercent>0.12</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-3" y="4" z="2" />
+              <IntegrityPercent>0.16</IntegrityPercent>
+              <BuildPercent>0.16</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="0" y="3" z="1" />
+              <IntegrityPercent>0.24</IntegrityPercent>
+              <BuildPercent>0.24</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_CubeBlock">
+              <SubtypeName>LargeBlockArmorSlope</SubtypeName>
+              <Min x="-1" y="3" z="1" />
+              <IntegrityPercent>0.24</IntegrityPercent>
+              <BuildPercent>0.24</BuildPercent>
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_InteriorTurret">
+              <SubtypeName>LargeInteriorTurret</SubtypeName>
+              <EntityId>124556181342165578</EntityId>
+              <Min x="6" y="5" z="4" />
+              <BlockOrientation Forward="Forward" Up="Down" />
+              <ColorMaskHSV x="0" y="0" z="0.05" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Inventory>
+                <Items>
+                  <MyObjectBuilder_InventoryItem>
+                    <Amount>20</Amount>
+                    <PhysicalContent xsi:type="MyObjectBuilder_AmmoMagazine">
+                      <SubtypeName>NATO_5p56x45mm</SubtypeName>
+                      <ProjectilesCount>0</ProjectilesCount>
+                    </PhysicalContent>
+                    <ItemId>0</ItemId>
+                    <AmountDecimal>20</AmountDecimal>
+                  </MyObjectBuilder_InventoryItem>
+                </Items>
+                <nextItemId>1</nextItemId>
+              </Inventory>
+              <RemainingAmmo>0</RemainingAmmo>
+              <Target>0</Target>
+              <IsPotentialTarget>true</IsPotentialTarget>
+              <PreviousControlledEntityId xsi:nil="true" />
+              <Rotation>0</Rotation>
+              <Elevation>0</Elevation>
+              <IsShooting>false</IsShooting>
+              <GunBase>
+                <RemainingAmmo>0</RemainingAmmo>
+                <CurrentAmmoMagazineName>NATO_5p56x45mm</CurrentAmmoMagazineName>
+                <RemainingAmmosList />
+              </GunBase>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_InteriorLight">
+              <SubtypeName>SmallLight</SubtypeName>
+              <EntityId>141282181257699559</EntityId>
+              <Min x="0" y="3" z="3" />
+              <BlockOrientation Forward="Down" Up="Forward" />
+              <ColorMaskHSV x="0" y="-1" z="0" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Radius>3.6</Radius>
+              <ColorGreen>0</ColorGreen>
+              <ColorBlue>0</ColorBlue>
+              <Falloff>1</Falloff>
+              <Intensity>2.53385425</Intensity>
+              <BlinkIntervalSeconds>3</BlinkIntervalSeconds>
+              <BlinkLenght>49.8</BlinkLenght>
+              <BlinkOffset>0</BlinkOffset>
+            </MyObjectBuilder_CubeBlock>
+            <MyObjectBuilder_CubeBlock xsi:type="MyObjectBuilder_InteriorLight">
+              <SubtypeName>SmallLight</SubtypeName>
+              <EntityId>97299631166265363</EntityId>
+              <Min x="-2" y="3" z="3" />
+              <BlockOrientation Forward="Down" Up="Right" />
+              <ColorMaskHSV x="0" y="-1" z="-0.5" />
+              <ShareMode>None</ShareMode>
+              <DeformationRatio>0</DeformationRatio>
+              <CustomName>Interior Light 3</CustomName>
+              <ShowOnHUD>false</ShowOnHUD>
+              <Enabled>true</Enabled>
+              <Radius>3.6</Radius>
+              <ColorGreen>0</ColorGreen>
+              <ColorBlue>0</ColorBlue>
+              <Falloff>1</Falloff>
+              <Intensity>2.53385425</Intensity>
+              <BlinkIntervalSeconds>3</BlinkIntervalSeconds>
+              <BlinkLenght>49.8</BlinkLenght>
+              <BlinkOffset>0</BlinkOffset>
+            </MyObjectBuilder_CubeBlock>
+          </CubeBlocks>
+          <IsStatic>true</IsStatic>
+          <Skeleton />
+          <LinearVelocity x="0" y="0" z="0" />
+          <AngularVelocity x="0" y="0" z="0" />
+          <XMirroxPlane xsi:nil="true" />
+          <YMirroxPlane xsi:nil="true" />
+          <ZMirroxPlane xsi:nil="true" />
+          <ConveyorLines>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="3" y="1" z="-2" />
+              <StartDirection>Forward</StartDirection>
+              <EndPosition x="3" y="1" z="-3" />
+              <EndDirection>Backward</EndDirection>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="5" y="3" z="1" />
+              <StartDirection>Up</StartDirection>
+              <EndPosition x="5" y="5" z="1" />
+              <EndDirection>Down</EndDirection>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="6" y="2" z="2" />
+              <StartDirection>Left</StartDirection>
+              <EndPosition x="5" y="3" z="1" />
+              <EndDirection>Backward</EndDirection>
+              <Sections>
+                <Section Direction="Left" Length="1" />
+                <Section Direction="Up" Length="1" />
+                <Section Direction="Forward" Length="1" />
+              </Sections>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="5" y="3" z="1" />
+              <StartDirection>Down</StartDirection>
+              <EndPosition x="5" y="2" z="1" />
+              <EndDirection>Up</EndDirection>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="5" y="6" z="3" />
+              <StartDirection>Up</StartDirection>
+              <EndPosition x="5" y="7" z="3" />
+              <EndDirection>Down</EndDirection>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="5" y="6" z="3" />
+              <StartDirection>Down</StartDirection>
+              <EndPosition x="5" y="5" z="1" />
+              <EndDirection>Backward</EndDirection>
+              <Sections>
+                <Section Direction="Down" Length="1" />
+                <Section Direction="Forward" Length="2" />
+              </Sections>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+            <MyObjectBuilder_ConveyorLine>
+              <StartPosition x="3" y="1" z="1" />
+              <StartDirection>Backward</StartDirection>
+              <EndPosition x="5" y="3" z="1" />
+              <EndDirection>Left</EndDirection>
+              <Sections>
+                <Section Direction="Backward" Length="1" />
+                <Section Direction="Up" Length="2" />
+                <Section Direction="Forward" Length="1" />
+                <Section Direction="Right" Length="2" />
+              </Sections>
+              <ConveyorLineType>LARGE_LINE</ConveyorLineType>
+            </MyObjectBuilder_ConveyorLine>
+          </ConveyorLines>
+          <BlockGroups />
+          <Handbrake>false</Handbrake>
+          <DisplayName>factory&amp;</DisplayName>
+          <CreatePhysics>false</CreatePhysics>
+        </CubeGrid>
+      </CubeGrids>
+    </Prefab>
+  </Prefabs>
+</Definitions>
