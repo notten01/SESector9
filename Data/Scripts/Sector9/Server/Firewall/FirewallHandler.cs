@@ -1,5 +1,6 @@
 ﻿using Sandbox.Game.Entities;
 using Sandbox.ModAPI;
+using Sector9.Core;
 using Sector9.Core.Logging;
 using Sector9.Server.Firewall;
 using System.Collections.Generic;
@@ -9,20 +10,22 @@ using VRage.ModAPI;
 
 namespace Sector9.Server.FireWall
 {
-    internal class FirewallHandler
+    internal class FirewallHandler : ITickable
     {
         private const string cDataFilename = "S9FirewallTracking.xml";
         private const string FirewallName = "Firewall";
-        private const int MissingFirewallTimeout = 432000;
         private readonly FactionManager FactionManager;
         private FirewallData Data;
         private IMyCubeBlock Firewall;
         private bool HasFirewall;
         private bool ValidFirewall;
+        private bool WasValidLastCycle;
+        private int tickIndex = 7; //small offset so not every system tick on the same cycle
         //todo: you can save the grid with the firewall with the entity id
 
         public FirewallHandler(FactionManager factionManager)
         {
+            WasValidLastCycle = true;
             TryLoad();
             FactionManager = factionManager;
             ScanForFirewall();
@@ -229,6 +232,33 @@ namespace Sector9.Server.FireWall
             if (Data == null)
             {
                 Data = new FirewallData();
+            }
+        }
+
+        public void Tick()
+        {
+            if (tickIndex < 60)
+            {
+                tickIndex++;
+                return;
+            }
+            tickIndex = 0;
+
+            if (!IsFirewallValid())
+            {
+                Data.FirewallCountdown--;
+                WasValidLastCycle = false;
+                if (Data.FirewallCountdown <= 0)
+                {
+                    Data.GameOver = true;
+                }
+            }
+            else
+            {
+                if (!WasValidLastCycle)
+                {
+                    Data.ResetCountdownn();
+                }
             }
         }
     }

@@ -95,6 +95,7 @@ namespace Sector9.Server
         public void Tick()
         {
             UnitCommander.Tick();
+            Firewall.Tick();
         }
 
         private void TryLoad()
