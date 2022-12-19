@@ -13,5 +13,14 @@ automation:
 ship:
 - Data/Prefabs/*.sbc
 
+model:
+- Models/*
+
+textures:
+- Textures/*
+
+sandbox-definition:
+- *.sbc
+
 license:
 - LICENSE

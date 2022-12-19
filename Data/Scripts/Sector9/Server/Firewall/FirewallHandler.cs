@@ -18,9 +18,10 @@ namespace Sector9.Server.FireWall
         private FirewallData Data;
         private IMyCubeBlock Firewall;
         private bool HasFirewall;
+        private int tickIndex = 7;
         private bool ValidFirewall;
         private bool WasValidLastCycle;
-        private int tickIndex = 7; //small offset so not every system tick on the same cycle
+        //small offset so not every system tick on the same cycle
         //todo: you can save the grid with the firewall with the entity id
 
         public FirewallHandler(FactionManager factionManager)
@@ -82,6 +83,34 @@ namespace Sector9.Server.FireWall
             }
         }
 
+        public void Tick()
+        {
+            if (tickIndex < 60)
+            {
+                tickIndex++;
+                return;
+            }
+            tickIndex = 0;
+
+            if (!IsFirewallValid())
+            {
+                Data.FirewallCountdown--;
+                WasValidLastCycle = false;
+                if (Data.FirewallCountdown <= 0)
+                {
+                    Logger.Log("Game over!", Logger.Severity.Warning, Logger.LogType.System);
+                    Data.GameOver = true;
+                }
+            }
+            else
+            {
+                if (!WasValidLastCycle)
+                {
+                    Data.ResetCountdownn();
+                }
+            }
+        }
+
         private void AddedEntity(IMyEntity newEntity)
         {
             IMyCubeGrid grid = newEntity as IMyCubeGrid;
@@ -91,13 +120,6 @@ namespace Sector9.Server.FireWall
             Logger.Log("Tracking new entity for firewall", Logger.Severity.Info, Logger.LogType.Server);
             grid.OnBlockAdded += CheckIfIsFirewall;
             grid.OnMarkForClose += UnsubscribeGrid;
-        }
-
-        private void UnsubscribeGrid(IMyEntity closingGrid)
-        {
-            IMyCubeGrid grid = closingGrid as IMyCubeGrid;
-            grid.OnBlockAdded -= CheckIfIsFirewall;
-            grid.OnMarkForClose -= UnsubscribeGrid;
         }
 
         private void BeginGridTracking()
@@ -235,31 +257,11 @@ namespace Sector9.Server.FireWall
             }
         }
 
-        public void Tick()
+        private void UnsubscribeGrid(IMyEntity closingGrid)
         {
-            if (tickIndex < 60)
-            {
-                tickIndex++;
-                return;
-            }
-            tickIndex = 0;
-
-            if (!IsFirewallValid())
-            {
-                Data.FirewallCountdown--;
-                WasValidLastCycle = false;
-                if (Data.FirewallCountdown <= 0)
-                {
-                    Data.GameOver = true;
-                }
-            }
-            else
-            {
-                if (!WasValidLastCycle)
-                {
-                    Data.ResetCountdownn();
-                }
-            }
+            IMyCubeGrid grid = closingGrid as IMyCubeGrid;
+            grid.OnBlockAdded -= CheckIfIsFirewall;
+            grid.OnMarkForClose -= UnsubscribeGrid;
         }
     }
 }
