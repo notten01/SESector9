@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_TimerBlockDefinition">
+			<Id>
+				<TypeId>TimerBlock</TypeId>
+				<SubtypeId>Firewall</SubtypeId>
+			</Id>
+			<DisplayName>Firewall</DisplayName>
+			<Description>Jump protection against system ships. WARNING: test version, might be leaky!</Description>
+			<Icon>Textures\Firewall.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="6" z="2" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\large\Firewall.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="81" />
+				<Component Subtype="LargeTube" Count="42" />
+				<Component Subtype="SmallTube" Count="60" />
+				<Component Subtype="Construction" Count="32" />
+				<Component Subtype="Computer" Count="9" />
+				<Component Subtype="Display" Count="1" />
+				<Component Subtype="Motor" Count="1" />
+				<Component Subtype="RadioCommunication" Count="40" />
+				<Component Subtype="SteelPlate" Count="30" />
+			</Components>
+			<CriticalComponent Subtype="RadioCommunication" Index="0" />
+			<BuildTimeSeconds>240</BuildTimeSeconds>
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00" />
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\Firewall_BS1.mwm" />
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\large\Firewall_BS2.mwm" />
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\Firewall_BS3.mwm" />
+			</BuildProgressModels>
+			<BlockPairName>Firewall</BlockPairName>
+			<IsAirTight>false</IsAirTight>
+			<DamageEffectName>Damage_Electrical_Damaged</DamageEffectName>
+			<DestroyEffect>Explosion_Warhead_30</DestroyEffect>
+			<DestroySound>WepLrgWarheadExpl</DestroySound>
+			<PCU>1</PCU>
+			<DamagedSound>ParticleElectrical</DamagedSound>
+		</Definition>
+	</CubeBlocks>
+</Definitions>
