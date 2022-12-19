@@ -1,8 +1,8 @@
 ﻿namespace Sector9.Client
 {
-    public class PlayerData
+    public class ClientData
     {
-        public PlayerData()
+        public ClientData()
         {
             EnableLog = true;
         }

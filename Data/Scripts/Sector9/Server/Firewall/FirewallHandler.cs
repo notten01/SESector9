@@ -3,6 +3,7 @@ using Sandbox.ModAPI;
 using Sector9.Core;
 using Sector9.Core.Logging;
 using Sector9.Server.Firewall;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using VRage.Game.ModAPI;
@@ -246,9 +247,16 @@ namespace Sector9.Server.FireWall
         {
             if (MyAPIGateway.Utilities.FileExistsInWorldStorage(cDataFilename, typeof(FirewallData)))
             {
-                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFilename, typeof(FirewallData)))
+                try
                 {
-                    Data = MyAPIGateway.Utilities.SerializeFromXML<FirewallData>(reader.ReadToEnd());
+                    using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFilename, typeof(FirewallData)))
+                    {
+                        Data = MyAPIGateway.Utilities.SerializeFromXML<FirewallData>(reader.ReadToEnd());
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    Logger.Log("The firewall settings could not be loaded for some reason, they have been overwritten by the default!", Logger.Severity.Error, Logger.LogType.System);
                 }
             }
             if (Data == null)
