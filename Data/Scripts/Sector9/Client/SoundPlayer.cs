@@ -25,7 +25,7 @@ namespace Sector9.Client
             SoundQueue = new Queue();
             LiveSoundEmitters = new List<MyEntity3DSoundEmitter>();
             QueuedSoundemitter = new MyEntity3DSoundEmitter((MyEntity)MyAPIGateway.Session.LocalHumanPlayer.Controller.ControlledEntity);
-            Logger.Log("Sound player initialized", Logger.Severity.Info, Logger.LogType.Player);
+            Logger.Log("Sound player initialized", Logger.Severity.Info, Logger.LogType.Client);
         }
 
         /// <summary>

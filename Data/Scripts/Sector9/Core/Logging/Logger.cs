@@ -16,7 +16,7 @@ namespace Sector9.Core.Logging
 
         public enum LogType
         {
-            Player,
+            Client,
             Server,
             System
         }
@@ -36,7 +36,7 @@ namespace Sector9.Core.Logging
         private static List<LogMessage> MessageQueue = new List<LogMessage>();
         private static object QueueLock = new object();
         private static bool ServerLog = true;
-        private static bool PlayerLog = true;
+        private static bool ClientLog = true;
 
         /// <summary>
         /// Write the logs async to IO
@@ -65,12 +65,12 @@ namespace Sector9.Core.Logging
         public static void SetLogTypes(bool server, bool player)
         {
             ServerLog = server;
-            PlayerLog = player;
+            ClientLog = player;
         }
 
         public static void Log(string message, Severity severity, LogType type)
         {
-            if ((type == LogType.Player && !PlayerLog && severity < Severity.Error) || (type == LogType.Server && !ServerLog && severity < Severity.Error))
+            if ((type == LogType.Client && !ClientLog && severity < Severity.Error) || (type == LogType.Server && !ServerLog && severity < Severity.Error))
             {
                 return; //don't log
             }

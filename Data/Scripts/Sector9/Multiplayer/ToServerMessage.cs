@@ -3,7 +3,7 @@
 namespace Sector9.Multiplayer
 {
     [ProtoContract]
-    internal class CommandMessage
+    public class ToServerMessage
     {
         [ProtoMember(1)]
         public ulong SenderSteamId;
@@ -14,7 +14,7 @@ namespace Sector9.Multiplayer
         [ProtoMember(3)]
         public string Message;
 
-        public CommandMessage()
+        public ToServerMessage()
         {
             SenderSteamId = 0;
             SenderIdentityId = 0;

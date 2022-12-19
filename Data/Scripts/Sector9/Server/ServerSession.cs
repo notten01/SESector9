@@ -1,9 +1,12 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Api;
 using Sector9.Core;
+using Sector9.Core.Logging;
+using Sector9.Multiplayer;
 using Sector9.Server.FireWall;
 using Sector9.Server.Units;
 using Server.Data;
+using System;
 using System.Collections.Generic;
 using VRage.Game.ModAPI;
 using VRage.ModAPI;
@@ -53,8 +56,10 @@ namespace Sector9.Server
         /// <summary>
         /// Dispose all events and or session based stuff
         /// </summary>
-        public void Shutdown()
+        public void Shutdown(SyncManager syncManager)
         {
+            MyAPIGateway.Utilities.MessageEntered -= syncManager.ChatMessageRecieved;
+            MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncIdToServer, syncManager.NetworkServerMessageRecieved);
             Factions.Shutdown();
             WeaponsCore.Unload();
             Firewall.Shutdown();
@@ -82,6 +87,12 @@ namespace Sector9.Server
             return null;
         }
 
+        public void Startup(SyncManager syncManager)
+        {
+            MyAPIGateway.Utilities.MessageEntered += syncManager.ChatMessageRecieved;
+            MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.SyncIdToServer, syncManager.NetworkServerMessageRecieved);
+        }
+
         public List<IMyEntity> TestSpawn(string name)
         {
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
@@ -102,12 +113,19 @@ namespace Sector9.Server
         {
             if (MyAPIGateway.Utilities.FileExistsInWorldStorage(cDataFileName, typeof(ServerData)))
             {
-                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFileName, typeof(ServerData)))
+                try
                 {
-                    Data = MyAPIGateway.Utilities.SerializeFromXML<ServerData>(reader.ReadToEnd());
+                    using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFileName, typeof(ServerData)))
+                    {
+                        Data = MyAPIGateway.Utilities.SerializeFromXML<ServerData>(reader.ReadToEnd());
+                    }
+                }
+                catch (InvalidOperationException)
+                {
+                    Logger.Log("The ServerSession settings could not be loaded for some reason, they have been overwritten with the default!", Logger.Severity.Error, Logger.LogType.System);
                 }
             }
-            else
+            if (Data == null)
             {
                 Data = new ServerData();
             }

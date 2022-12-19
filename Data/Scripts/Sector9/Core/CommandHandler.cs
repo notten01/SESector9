@@ -15,7 +15,7 @@ namespace Sector9.Core
     /// <summary>
     /// class handles commands received by text
     /// </summary>
-    internal class CommandHandler
+    public class CommandHandler
     {
         private readonly CoreSession Core;
 
@@ -24,7 +24,7 @@ namespace Sector9.Core
             Core = core;
         }
 
-        public void HandleCommand(CommandMessage command)
+        public void HandleCommand(ToServerMessage command)
         {
             Logger.Log($"Handling custom message '{command.Message}'", Logger.Severity.Info, Logger.LogType.System);
             if (command.Message == "spawn")
@@ -63,14 +63,19 @@ namespace Sector9.Core
             else if (command.Message == "beep")
             {
                 var player = MyAPIGateway.Session.LocalHumanPlayer;
-                Core.PlayerSession?.SoundPlayer.PlaySoundInQueue(player.GetPosition(), "s9lurking1");
+                Core.ClientSession?.SoundPlayer.PlaySoundInQueue(player.GetPosition(), "s9lurking1");
                 MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "beep!");
             }
             else if (command.Message == "beep!")
             {
                 var player = MyAPIGateway.Session.LocalHumanPlayer;
-                Core.PlayerSession?.SoundPlayer.PlaySound(player.Controller.ControlledEntity.Entity, player.GetPosition(), "s9lurking2");
+                Core.ClientSession?.SoundPlayer.PlaySound(player.Controller.ControlledEntity.Entity, player.GetPosition(), "s9lurking2");
                 MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "live beep!");
+            }
+            else if (command.Message == "hello")
+            {
+                FromServerMessage helloMessage = new FromServerMessage { Payload = "world", PayloadType = FromServerMessage.MessageType.Notification };
+                Core.SyncManager.SendSystemMessage(helloMessage);
             }
         }
     }
