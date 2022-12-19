@@ -20,7 +20,7 @@ textures:
 - Textures/*
 
 sandbox-definition:
-- *.sbc
+- Data/*.sbc
 
 license:
 - LICENSE
