@@ -1,4 +1,6 @@
-﻿namespace Sector9.Server
+﻿using Sector9.Core;
+
+namespace Sector9.Server
 {
     public class ServerData
     {
@@ -8,6 +10,7 @@
         public ServerData()
         {
             EnableLog = true;
+            Version = S9Constants.Version;
         }
     }
 }

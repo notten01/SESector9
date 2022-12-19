@@ -12,35 +12,35 @@ namespace Sector9.Server
     {
         private const string cSystemName = "VGhlU3lzdGVt";
         private const string cHumanityName = "Sector 1";
-        private readonly IMyFaction hostileFaciton;
-        private readonly IMyFaction humanFactiopn;
+        public IMyFaction HostileFaciton { get; }
+        public IMyFaction HumanFactiopn { get; }
 
         /// <summary>
         /// ctor, ensures that factions are created to the liking of this mods. Resets all stats incorrect
         /// </summary>
         public FactionManager()
         {
-            hostileFaciton = MyAPIGateway.Session.Factions.TryGetFactionByName(cSystemName);
-            humanFactiopn = MyAPIGateway.Session.Factions.TryGetFactionByName(cHumanityName);
+            HostileFaciton = MyAPIGateway.Session.Factions.TryGetFactionByName(cSystemName);
+            HumanFactiopn = MyAPIGateway.Session.Factions.TryGetFactionByName(cHumanityName);
             bool createdFaction = false;
-            if (hostileFaciton == null)
+            if (HostileFaciton == null)
             {
                 MyAPIGateway.Session.Factions.CreateNPCFaction("SYS", cSystemName, "U2VjdG9yIDEgd2lsbCBmYWxs", "you should not be able to read this?");
-                hostileFaciton = MyAPIGateway.Session.Factions.TryGetFactionByName(cSystemName);
-                MyAPIGateway.Session.Factions.AddNewNPCToFaction(hostileFaciton.FactionId, "cm9vdA==");
+                HostileFaciton = MyAPIGateway.Session.Factions.TryGetFactionByName(cSystemName);
+                MyAPIGateway.Session.Factions.AddNewNPCToFaction(HostileFaciton.FactionId, "cm9vdA==");
                 createdFaction = true;
                 Logger.Log("Created hostile faction", Logger.Severity.Info, Logger.LogType.Server);
             }
-            if (humanFactiopn == null)
+            if (HumanFactiopn == null)
             {
                 MyAPIGateway.Session.Factions.CreateNPCFaction("S1", cHumanityName, "Terra", "Again, you should not be able to read this?");
-                humanFactiopn = MyAPIGateway.Session.Factions.TryGetFactionByName(cHumanityName);
-                MyAPIGateway.Session.Factions.AddNewNPCToFaction(humanFactiopn.FactionId, "Operator");
+                HumanFactiopn = MyAPIGateway.Session.Factions.TryGetFactionByName(cHumanityName);
+                MyAPIGateway.Session.Factions.AddNewNPCToFaction(HumanFactiopn.FactionId, "Operator");
                 createdFaction = true;
                 Logger.Log("Created human faction", Logger.Severity.Info, Logger.LogType.Server);
             }
 
-            if (hostileFaciton == null || humanFactiopn == null)
+            if (HostileFaciton == null || HumanFactiopn == null)
             {
                 Logger.Log("Could not properly create factions on game setup!", Logger.Severity.Fatal, Logger.LogType.Server);
                 MyAPIGateway.Utilities.ShowMissionScreen("Fatal error", "Sector 9 crash", "on:", "The system was unable to produce the factions required for the game to run properly.\r\n" +
@@ -54,14 +54,14 @@ namespace Sector9.Server
                 Logger.Log("Setting up deplomicy of new factions", Logger.Severity.Info, Logger.LogType.Server);
                 foreach (var faction in MyAPIGateway.Session.Factions.Factions.Values.Select(x => x.FactionId))
                 {
-                    MyAPIGateway.Session.Factions.DeclareWar(hostileFaciton.FactionId, faction);
-                    MyAPIGateway.Session.Factions.SendPeaceRequest(humanFactiopn.FactionId, faction);
+                    MyAPIGateway.Session.Factions.DeclareWar(HostileFaciton.FactionId, faction);
+                    MyAPIGateway.Session.Factions.SendPeaceRequest(HumanFactiopn.FactionId, faction);
                 }
             }
 
-            MyAPIGateway.Session.Factions.SetReputation(hostileFaciton.FactionId, humanFactiopn.FactionId, -1000);
-            MyAPIGateway.Session.Factions.DeclareWar(hostileFaciton.FactionId, humanFactiopn.FactionId);
-            MyAPIGateway.Session.Factions.DeclareWar(humanFactiopn.FactionId, hostileFaciton.FactionId);
+            MyAPIGateway.Session.Factions.SetReputation(HostileFaciton.FactionId, HumanFactiopn.FactionId, -1000);
+            MyAPIGateway.Session.Factions.DeclareWar(HostileFaciton.FactionId, HumanFactiopn.FactionId);
+            MyAPIGateway.Session.Factions.DeclareWar(HumanFactiopn.FactionId, HostileFaciton.FactionId);
 
             MyAPIGateway.Session.Factions.FactionCreated += FactionCreated;
             Logger.Log("Stared faction manager", Logger.Severity.Info, Logger.LogType.Server);
@@ -74,9 +74,9 @@ namespace Sector9.Server
 
         private void FactionCreated(long factionId)
         {
-            MyAPIGateway.Session.Factions.DeclareWar(hostileFaciton.FactionId, factionId);
-            MyAPIGateway.Session.Factions.SetReputation(hostileFaciton.FactionId, factionId, -1000);
-            MyAPIGateway.Session.Factions.SendPeaceRequest(humanFactiopn.FactionId, factionId);
+            MyAPIGateway.Session.Factions.DeclareWar(HostileFaciton.FactionId, factionId);
+            MyAPIGateway.Session.Factions.SetReputation(HostileFaciton.FactionId, factionId, -1000);
+            MyAPIGateway.Session.Factions.SendPeaceRequest(HumanFactiopn.FactionId, factionId);
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace Sector9.Server
         /// <param name="grid">Grid to set ownership</param>
         public void AssignGridToHumanFaction(IMyCubeGrid grid)
         {
-            AssignGridToFaction(grid, humanFactiopn.FounderId);
+            AssignGridToFaction(grid, HumanFactiopn.FounderId);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace Sector9.Server
         /// <param name="grid">Grid to change ownership</param>
         public void AssignGridToHostileFaction(IMyCubeGrid grid)
         {
-            AssignGridToFaction(grid, hostileFaciton.FounderId);
+            AssignGridToFaction(grid, HostileFaciton.FounderId);
         }
 
         private static void AssignGridToFaction(IMyCubeGrid grid, long ownerId)
