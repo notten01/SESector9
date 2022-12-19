@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_TimerBlockDefinition">
+			<Id>
+				<TypeId>TimerBlock</TypeId>
+				<SubtypeId>Firewall</SubtypeId>
+			</Id>
+			<DisplayName>Firewall</DisplayName>
+			<Description>Jump protection against system ships. WARNING: test version, might be leaky!</Description>
+			<Icon>Textures\Firewall.dds</Icon>
+			<CubeSize>Large</CubeSize>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="6" z="2"/>
+			<ModelOffset x="0" y="0" z="0"/>
+			<Model>Models\Cubes\large\Firewall.mwm</Model>
+			<Components>
+				<Component Subtype="SteelPlate" Count="10"/>
+			</Components>
+			<CriticalComponent Subtype="SteelPlate" Index="5"/>
+			<MountPoints>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="2.00"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.33" File="Models\Cubes\large\Firewall_BS1.mwm"/>
+				<Model BuildPercentUpperBound="0.67" File="Models\Cubes\large\Firewall_BS2.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\Firewall_BS3.mwm"/>
+			</BuildProgressModels>
+			<BlockPairName>Firewall</BlockPairName>
+		</Definition>
+	</CubeBlocks>
+</Definitions>
