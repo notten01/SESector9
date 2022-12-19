@@ -14,13 +14,16 @@ ship:
 - Data/Prefabs/*.sbc
 
 model:
-- Models/*
+- Models/**/*.*
 
 textures:
-- Textures/*
+- Textures/**/*.*
 
 sandbox-definition:
 - *.sbc
+
+audio:
+ - Sounds/**/*.*
 
 license:
 - LICENSE

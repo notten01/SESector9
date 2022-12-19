@@ -11,10 +11,12 @@ namespace Sector9.Client
     {
         private const string cDataFileName = "S9PlayerSession.xml";
         private PlayerData Data;
+        public SoundPlayer SoundPlayer { get; }
 
         public PlayerSession()
         {
             TryLoad();
+            SoundPlayer = new SoundPlayer();
         }
 
         public bool EnableLog => Data.EnableLog;
@@ -29,7 +31,7 @@ namespace Sector9.Client
 
         public void Tick()
         {
-            //tick
+            SoundPlayer.Tick();
         }
 
         private void TryLoad()

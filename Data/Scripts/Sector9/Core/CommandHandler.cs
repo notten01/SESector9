@@ -60,6 +60,18 @@ namespace Sector9.Core
                     MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, $"Coudl not spawn {parts.Last()} from prefabs folder");
                 }
             }
+            else if (command.Message == "beep")
+            {
+                var player = MyAPIGateway.Session.LocalHumanPlayer;
+                Core.PlayerSession?.SoundPlayer.PlaySoundInQueue(player.GetPosition(), "s9lurking1");
+                MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "beep!");
+            }
+            else if (command.Message == "beep!")
+            {
+                var player = MyAPIGateway.Session.LocalHumanPlayer;
+                Core.PlayerSession?.SoundPlayer.PlaySound(player.Controller.ControlledEntity.Entity, player.GetPosition(), "s9lurking2");
+                MyAPIGateway.Utilities.ShowMessage(S9Constants.SystemName, "live beep!");
+            }
         }
     }
 }
