@@ -1,0 +1,49 @@
+﻿<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Sounds>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>s9lurking1</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\lurking1.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>s9lurking2</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\lurking2.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>s9lurkingFinal</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\lurkingFinal.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+	</Sounds>
+</Definitions>
