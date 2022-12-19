@@ -25,5 +25,8 @@ sandbox-definition:
 audio:
  - Sounds/**/*.*
 
+audio:
+ - Sounds/**/*.*
+
 license:
 - LICENSE
