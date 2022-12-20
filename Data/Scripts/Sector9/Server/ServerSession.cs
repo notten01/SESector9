@@ -23,11 +23,14 @@ namespace Sector9.Server
         private readonly FactionManager Factions;
         private readonly FirewallHandler Firewall;
         private readonly GridSpawner Spawner;
+        private readonly DamageHandler DamageHandler;
+
         private ServerData Data;
 
         public ServerSession()
         {
             TryLoad();
+            DamageHandler = new DamageHandler();
             Factions = new FactionManager();
             Planets = new Planets();
             Spawner = new GridSpawner(Planets);
@@ -35,7 +38,7 @@ namespace Sector9.Server
             WeaponsCore = new Wc();
             WeaponsCore.Load(null, true);
             BlockLibrary = new DefinitionLibrary(WeaponsCore);
-            UnitCommander = new UnitCommander();
+            UnitCommander = new UnitCommander(DamageHandler);
         }
 
         public DefinitionLibrary BlockLibrary { get; private set; }

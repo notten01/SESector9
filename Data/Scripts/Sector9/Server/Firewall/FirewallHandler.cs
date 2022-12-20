@@ -118,7 +118,6 @@ namespace Sector9.Server.FireWall
 
             if (grid == null) { return; }
 
-            Logger.Log("Tracking new entity for firewall", Logger.Severity.Info, Logger.LogType.Server);
             grid.OnBlockAdded += CheckIfIsFirewall;
             grid.OnMarkForClose += UnsubscribeGrid;
         }
@@ -129,7 +128,6 @@ namespace Sector9.Server.FireWall
             Data.GridId = -1;
             HashSet<IMyEntity> allEntities = new HashSet<IMyEntity>();
             MyAPIGateway.Entities.GetEntities(allEntities);
-            Logger.Log("got all entries", Logger.Severity.Info, Logger.LogType.Server);
             foreach (IMyEntity entity in allEntities)
             {
                 IMyCubeGrid grid = entity as IMyCubeGrid;
@@ -143,10 +141,8 @@ namespace Sector9.Server.FireWall
         {
             if (newBlock.CubeGrid == null) { return; } //block is not yet build
 
-            Logger.Log($"Checking if new block is firewall", Logger.Severity.Info, Logger.LogType.Server);
             if (newBlock.FatBlock != null && newBlock.FatBlock.BlockDefinition.SubtypeId.Equals(FirewallName))
             {
-                Logger.Log("New block seems to be firewall type", Logger.Severity.Info, Logger.LogType.Server);
                 IMyCubeBlock newFirewall = newBlock.FatBlock;
 
                 if (HasFirewall)

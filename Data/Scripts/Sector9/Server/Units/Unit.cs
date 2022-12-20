@@ -18,27 +18,24 @@ namespace Sector9.Server.Units
 {
     public class Unit : ITickable
     {
+        private readonly ICaptain Captain;
+        private readonly UnitCommander Commander;
         private readonly List<IMyEntity> Grids;
-        private MyCubeGrid PrimaryGrid;
+        private readonly DefinitionLibrary Library;
+        private readonly Planets Planets;
         private readonly string PrefabName;
         private readonly Wc WeaponsCore;
-        private readonly DefinitionLibrary Library;
-        private readonly UnitCommander Commander;
-        private readonly Planets Planets;
-
-        private MyRemoteControl RemoteControl;
-        private Task InitWorker;
-        private List<Thruster> Thrusters;
-        private Provider Provider;
-        private Pilot Pilot;
-
-        private bool Init = false;
-        private int ResuplyCounter = 0;
-        private int BehaviourCounter = 0;
-        public bool IsValid { get; private set; }
-
         private IBehaviour ActiveBehaviour;
-        private readonly ICaptain Captain;
+        private int BehaviourCounter = 0;
+        private DamageHandler DamageHandler;
+        private bool Init = false;
+        private Task InitWorker;
+        private Pilot Pilot;
+        private MyCubeGrid PrimaryGrid;
+        private Provider Provider;
+        private MyRemoteControl RemoteControl;
+        private int ResuplyCounter = 0;
+        private List<Thruster> Thrusters;
 
         public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, ICaptain captain, Planets planets) : this(grids, commander, prefabName, weaponsCore, library, planets)
         {
@@ -65,21 +62,21 @@ namespace Sector9.Server.Units
             commander.RegisterUnit(this);
         }
 
-        internal void SetBehaviour(IBehaviour behaviour)
+        public bool IsValid { get; private set; }
+
+        public long GetId()
         {
-            if (ActiveBehaviour != null && !ActiveBehaviour.IsReady)
-            {
-                ActiveBehaviour.Interrupt();
-            }
-            Logger.Log($"Unit {RemoteControl.CubeGrid.EntityId} Switching to new behaviour {behaviour.Name}", Logger.Severity.Info, Logger.LogType.Server);
-            ActiveBehaviour = behaviour;
-            ActiveBehaviour.SetUnit(this);
-            ActiveBehaviour.AttachPilot(Pilot);
+            return PrimaryGrid.EntityId;
         }
 
         public bool IsExecutingBehaviour()
         {
             return ActiveBehaviour != null && !ActiveBehaviour.IsComplete;
+        }
+
+        public void SetDamageHandler(DamageHandler damageHandler)
+        {
+            DamageHandler = damageHandler;
         }
 
         public void Tick()
@@ -146,6 +143,18 @@ namespace Sector9.Server.Units
             }
         }
 
+        internal void SetBehaviour(IBehaviour behaviour)
+        {
+            if (ActiveBehaviour != null && !ActiveBehaviour.IsReady)
+            {
+                ActiveBehaviour.Interrupt();
+            }
+            Logger.Log($"Unit {RemoteControl.CubeGrid.EntityId} Switching to new behaviour {behaviour.Name}", Logger.Severity.Info, Logger.LogType.Server);
+            ActiveBehaviour = behaviour;
+            ActiveBehaviour.SetUnit(this);
+            ActiveBehaviour.AttachPilot(Pilot);
+        }
+
         private void Initialize()
         {
             Thrusters = new List<Thruster>();
@@ -162,6 +171,7 @@ namespace Sector9.Server.Units
             {
                 Captain.SetCaptainData(RemoteControl, this);
             }
+            DamageHandler.TrackEntity(PrimaryGrid.EntityId);
         }
     }
 }
