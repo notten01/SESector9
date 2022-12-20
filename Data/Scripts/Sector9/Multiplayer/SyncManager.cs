@@ -1,6 +1,6 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Core;
-using Sector9.Core.Logging;
+using Sector9.Multiplayer.FromLayer;
 
 namespace Sector9.Multiplayer
 {
@@ -11,50 +11,53 @@ namespace Sector9.Multiplayer
     {
         public const int SyncIdToServer = 11557; //s9
         public const int SyncIdToClient = 11558; //s9+1
-        private readonly CommandHandler CommandHandler;
         private readonly CoreSession Session;
 
-        public SyncManager(CommandHandler commandHandler, CoreSession session)
+        public static SyncManager Instance { get; private set; }
+
+        public SyncManager(CoreSession session)
         {
             Session = session;
-            CommandHandler = commandHandler;
+            Instance = this;
         }
 
         /// <summary>
-        /// call when a chat message (so from local client to sync) is received
+        /// Send a content to the server
         /// </summary>
-        /// <param name="recievedMessage">Message that was entered by user</param>
-        /// <param name="sendToOthers">Send message as text to other players</param>
-        public void ChatMessageRecieved(string recievedMessage, ref bool sendToOthers)
+        /// <param name="payload">Playload struct you want to ship</param>
+        public void SendPayloadToServer(ToLayerType type, object payload)
         {
-            var player = MyAPIGateway.Session.LocalHumanPlayer;
-
-            if (player == null)
-            {
-                return; //dafuq?
-            }
-
-            bool isServerMessage = recievedMessage.StartsWith("/s9 ");
-            if (isServerMessage)
-            {
-                sendToOthers = false;
-                var message = new ToServerMessage();
-                message.SenderSteamId = player.SteamUserId;
-                message.SenderIdentityId = player.IdentityId;
-                message.Message = recievedMessage.Substring(4);
-                var serializedData = MyAPIGateway.Utilities.SerializeToBinary(message);
-                MyAPIGateway.Multiplayer.SendMessageToServer(SyncIdToServer, serializedData);
-            }
+            ToServerMessage wrapper = new ToServerMessage() { FromPlayerId = MyAPIGateway.Session.LocalHumanPlayer.IdentityId, LayerType = (int)type, PayLoad = MyAPIGateway.Utilities.SerializeToBinary(payload) };
+            MyAPIGateway.Multiplayer.SendMessageToServer(SyncIdToServer, MyAPIGateway.Utilities.SerializeToBinary(wrapper));
         }
 
         /// <summary>
-        /// Send a system message from the server to the clients
+        /// Send a payload from the server to one or more clients
         /// </summary>
-        /// <param name="message">Message payload</param>
-        public void SendSystemMessage(FromServerMessage message)
+        /// <param name="type">Type of payload to send</param>
+        /// <param name="payload">payload itself</param>
+        /// <param name="playerId">optional player id if the message should only go to that player</param>
+        public void SendPayloadFromServer(FromLayerType type, object payload, long? playerId)
         {
-            Logger.Log($"Sending message type {message.PayloadType} to clients", Logger.Severity.Info, Logger.LogType.Server);
-            var serializedData = MyAPIGateway.Utilities.SerializeToBinary(message);
+            FromServerMessage wrapper = new FromServerMessage() { PlayerId = playerId, LayerType = (int)type, Payload = MyAPIGateway.Utilities.SerializeToBinary(payload) };
+            SendServerPayload(wrapper);
+        }
+
+        /// <summary>
+        /// Send a chatlog message to one or more players
+        /// </summary>
+        /// <param name="content">Message to send</param>
+        /// <param name="palyerId">Optional player id if you only want to send it to a specific person</param>
+        public void SendMessageFromServer(string content, long? palyerId = null)
+        {
+            TextMessage message = new TextMessage() { Sender = S9Constants.SystemName, Text = content };
+            FromServerMessage wrapper = new FromServerMessage() { LayerType = (int)FromLayerType.Message, Payload = MyAPIGateway.Utilities.SerializeToBinary(message), PlayerId = palyerId };
+            SendServerPayload(wrapper);
+        }
+
+        private void SendServerPayload(FromServerMessage content)
+        {
+            var serializedData = MyAPIGateway.Utilities.SerializeToBinary(content);
             MyAPIGateway.Multiplayer.SendMessageToOthers(SyncIdToClient, serializedData);
             if (!MyAPIGateway.Utilities.IsDedicated)
             {
@@ -72,7 +75,7 @@ namespace Sector9.Multiplayer
         internal void NetworkServerMessageRecieved(ushort id, byte[] rawMessage, ulong senderId, bool ArrivedFromServer)
         {
             var message = MyAPIGateway.Utilities.SerializeFromBinary<ToServerMessage>(rawMessage);
-            CommandHandler.HandleCommand(message);
+            Session.ServerSession.HandleServerMessage(message);
         }
 
         /// <summary>
@@ -85,7 +88,10 @@ namespace Sector9.Multiplayer
         internal void NetworkClientMessageRecieved(ushort id, byte[] rawMessage, ulong senderId, bool ArrivedFromServer)
         {
             var message = MyAPIGateway.Utilities.SerializeFromBinary<FromServerMessage>(rawMessage);
-            Session.ClientSession.HandleServerMessage(message);
+            if (message.PlayerId == null || message.PlayerId == MyAPIGateway.Session.LocalHumanPlayer.IdentityId)
+            {
+                Session.ClientSession.HandleServerMessage(message);
+            }
         }
     }
 }

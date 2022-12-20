@@ -2,23 +2,22 @@
 
 namespace Sector9.Multiplayer
 {
+    public enum ToLayerType : int
+    {
+        Spawn,
+        TestSpawn
+    }
+
     [ProtoContract]
-    public class ToServerMessage
+    public struct ToServerMessage
     {
         [ProtoMember(1)]
-        public ulong SenderSteamId;
+        public int LayerType;
 
         [ProtoMember(2)]
-        public long SenderIdentityId;
+        public byte[] PayLoad;
 
         [ProtoMember(3)]
-        public string Message;
-
-        public ToServerMessage()
-        {
-            SenderSteamId = 0;
-            SenderIdentityId = 0;
-            Message = "";
-        }
+        public long FromPlayerId;
     }
 }

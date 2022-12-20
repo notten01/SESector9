@@ -15,7 +15,6 @@ namespace Sector9.Core
     {
         public ServerSession ServerSession { get; private set; }
         public ClientSession ClientSession { get; private set; }
-        private CommandHandler CommandHandler;
         private bool StartupComplete = false;
         public SyncManager SyncManager { get; private set; }
         private int LogRotationCounter = 0;
@@ -24,14 +23,13 @@ namespace Sector9.Core
         {
             if (MyAPIGateway.Multiplayer.IsServer)
             {
-                ServerSession = new ServerSession();
+                ServerSession = new ServerSession(this);
             }
             if (!MyAPIGateway.Utilities.IsDedicated)
             {
                 ClientSession = new ClientSession();
             }
-            CommandHandler = new CommandHandler(this);
-            SyncManager = new SyncManager(CommandHandler, this);
+            SyncManager = new SyncManager(this);
             Logger.SetLogTypes(ServerSession?.EnableLog == true, ClientSession?.EnableLog == true);
             Logger.Log($"Startup complete! Server: {ServerSession != null}. Player: {ClientSession != null}. version: {S9Constants.Version}", Logger.Severity.Info, Logger.LogType.System);
             Logger.CycleLogs();

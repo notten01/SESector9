@@ -2,25 +2,23 @@
 
 namespace Sector9.Multiplayer
 {
-    [ProtoContract]
-    public class FromServerMessage
+    public enum FromLayerType : int
     {
-        public enum MessageType
-        {
-            Notification,
-            Sound
-        }
+        Notification,
+        Sound,
+        Message
+    }
 
+    [ProtoContract]
+    public struct FromServerMessage
+    {
         [ProtoMember(1)]
-        public MessageType PayloadType;
+        public int LayerType;
 
         [ProtoMember(2)]
-        public string Payload;
+        public long? PlayerId;
 
-        public FromServerMessage()
-        {
-            PayloadType = MessageType.Notification;
-            Payload = "";
-        }
+        [ProtoMember(3)]
+        public byte[] Payload;
     }
 }
