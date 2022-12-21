@@ -36,7 +36,7 @@ namespace Sector9.Client
 
         public void HandleServerMessage(FromServerMessage message)
         {
-            MessageHandler.HandleMessage(message);
+            MessageHandler.HandleIncommingCommand(message);
         }
 
         public void Tick()
@@ -47,11 +47,13 @@ namespace Sector9.Client
         public void Startup(SyncManager syncManager)
         {
             MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.SyncIdToClient, syncManager.NetworkClientMessageRecieved);
+            MessageHandler.Startup();
         }
 
         public void Shutdown(SyncManager syncManager)
         {
             MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncIdToClient, syncManager.NetworkClientMessageRecieved);
+            MessageHandler.Shutdown();
         }
 
         private void TryLoad()

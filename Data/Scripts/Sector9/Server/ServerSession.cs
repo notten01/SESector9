@@ -24,10 +24,11 @@ namespace Sector9.Server
         private readonly FirewallHandler Firewall;
         private readonly GridSpawner Spawner;
         private readonly DamageHandler DamageHandler;
+        private readonly AdmCommandHandler CommandHandler;
 
         private ServerData Data;
 
-        public ServerSession()
+        public ServerSession(CoreSession core)
         {
             TryLoad();
             DamageHandler = new DamageHandler();
@@ -39,6 +40,7 @@ namespace Sector9.Server
             WeaponsCore.Load(null, true);
             BlockLibrary = new DefinitionLibrary(WeaponsCore);
             UnitCommander = new UnitCommander(DamageHandler);
+            CommandHandler = new AdmCommandHandler(core);
         }
 
         public DefinitionLibrary BlockLibrary { get; private set; }
@@ -61,8 +63,8 @@ namespace Sector9.Server
         /// </summary>
         public void Shutdown(SyncManager syncManager)
         {
-            MyAPIGateway.Utilities.MessageEntered -= syncManager.ChatMessageRecieved;
             MyAPIGateway.Multiplayer.UnregisterSecureMessageHandler(SyncManager.SyncIdToServer, syncManager.NetworkServerMessageRecieved);
+            CommandHandler.Shutdown();
             Factions.Shutdown();
             WeaponsCore.Unload();
             Firewall.Shutdown();
@@ -71,14 +73,15 @@ namespace Sector9.Server
         /// <summary>
         /// Spawn a ship belonging to the hostile faction
         /// </summary>
+        /// <param name="shipName">Name of the prefab to spawn</param>
         /// <returns>True or false is the spawning was successfull</returns>
-        public List<IMyEntity> SpawnHostileShip()
+        public List<IMyEntity> SpawnHostileShip(string shipName)
         {
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
             pos.Add(new Vector3(10, 10, 10));
             var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid("QnVsbGRvZyBicmF3bGVy", positionMatrix, out createdGrids);
+            Spawner.TrySpawnGrid(shipName, positionMatrix, out createdGrids);
             if (createdGrids != null)
             {
                 foreach (var grid in createdGrids)
@@ -92,8 +95,8 @@ namespace Sector9.Server
 
         public void Startup(SyncManager syncManager)
         {
-            MyAPIGateway.Utilities.MessageEntered += syncManager.ChatMessageRecieved;
             MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.SyncIdToServer, syncManager.NetworkServerMessageRecieved);
+            CommandHandler.Startup();
         }
 
         public List<IMyEntity> TestSpawn(string name)
@@ -110,6 +113,11 @@ namespace Sector9.Server
         {
             UnitCommander.Tick();
             Firewall.Tick();
+        }
+
+        internal void HandleServerMessage(ToServerMessage message)
+        {
+            CommandHandler.HandleIncommingCommand(message);
         }
 
         private void TryLoad()

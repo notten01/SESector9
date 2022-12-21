@@ -2,6 +2,8 @@
 using Sandbox.ModAPI;
 using Sector9.Core;
 using Sector9.Core.Logging;
+using Sector9.Multiplayer;
+using Sector9.Multiplayer.FromLayer;
 using Sector9.Server.Firewall;
 using System;
 using System.Collections.Generic;
@@ -147,23 +149,23 @@ namespace Sector9.Server.FireWall
 
                 if (HasFirewall)
                 {
-                    Logger.Log("Can't have more then 1 firewall!", Logger.Severity.Warning, Logger.LogType.Server);
-                    //newFirewall.Close(); //not allowed to build two firewalls
+                    Notification message = new Notification() { Duration = 4000, Font = "red", Message = "You cant have more then 1 firewall block!" };
+                    SyncManager.Instance.SendPayloadFromServer(FromLayerType.Notification, message, newBlock.BuiltBy);
                     newFirewall.CubeGrid.RemoveBlock(newBlock);
                 }
                 else
                 {
                     if (!newFirewall.CubeGrid.IsStatic)
                     {
-                        Logger.Log("Firewall must be on static grid!", Logger.Severity.Warning, Logger.LogType.Server);
-                        //newFirewall.Close(); //must be build on a static grid
+                        Notification message = new Notification() { Duration = 4000, Font = "red", Message = "Firewall can only be build on a static grid!" };
+                        SyncManager.Instance.SendPayloadFromServer(FromLayerType.Notification, message, newBlock.BuiltBy);
                         newFirewall.CubeGrid.RemoveBlock(newBlock);
                         return;
                     }
                     if (newFirewall.GetOwnerFactionTag() == FactionManager.HostileFaciton.Tag)
                     {
-                        Logger.Log("Firewall must belong to human faction!", Logger.Severity.Warning, Logger.LogType.Server);
-                        //newFirewall.Close(); //must be human faction
+                        Notification message = new Notification() { Duration = 5000, Font = "red", Message = "wait what...how?! No, NO! you cannot build a firewall on a HOSTILE grid" };
+                        SyncManager.Instance.SendPayloadFromServer(FromLayerType.Notification, message, newBlock.BuiltBy);
                         newFirewall.CubeGrid.RemoveBlock(newBlock);
                         return;
                     }
