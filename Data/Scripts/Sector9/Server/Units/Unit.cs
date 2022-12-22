@@ -57,7 +57,6 @@ namespace Sector9.Server.Units
             WeaponsCore = weaponsCore;
             Grids = grids;
             Library = library;
-            InitWorker = MyAPIGateway.Parallel.StartBackground(Initialize);
             IsValid = true;
             commander.RegisterUnit(this);
         }
@@ -77,6 +76,7 @@ namespace Sector9.Server.Units
         public void SetDamageHandler(DamageHandler damageHandler)
         {
             DamageHandler = damageHandler;
+            InitWorker = MyAPIGateway.Parallel.StartBackground(Initialize);
         }
 
         public void Tick()
@@ -89,7 +89,7 @@ namespace Sector9.Server.Units
 
             if (!Init)
             {
-                if (InitWorker.IsComplete && InitWorker.Exceptions?.Length > 0)
+                if (DamageHandler != null && InitWorker.IsComplete && InitWorker.Exceptions?.Length > 0)
                 {
                     //error
                     StringBuilder message = new StringBuilder();
@@ -101,7 +101,7 @@ namespace Sector9.Server.Units
                     Logger.Log(message.ToString(), Logger.Severity.Error, Logger.LogType.Server);
                     IsValid = false;
                 }
-                else if (InitWorker.IsComplete)
+                else if (DamageHandler != null && InitWorker.IsComplete)
                 {
                     Logger.Log("Unit initialized!", Logger.Severity.Info, Logger.LogType.Server);
                     Init = true;

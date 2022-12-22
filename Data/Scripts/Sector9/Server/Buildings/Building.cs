@@ -37,12 +37,13 @@ namespace Sector9.Server.Buildings
             WeaponsCore = weaponsCore;
             Library = library;
             Commander = commander;
-            InitWorker = MyAPIGateway.Parallel.StartBackground(Initialize);
+            commander.RegisterBuilding(this);
         }
 
         public void SetDamageHandler(DamageHandler damageHandler)
         {
             DamageHandler = damageHandler;
+            InitWorker = MyAPIGateway.Parallel.StartBackground(Initialize);
         }
 
         public long GetId()
@@ -60,7 +61,7 @@ namespace Sector9.Server.Buildings
 
             if (!Init)
             {
-                if (InitWorker.IsComplete && InitWorker.Exceptions?.Length > 0)
+                if (DamageHandler != null && InitWorker.IsComplete && InitWorker.Exceptions?.Length > 0)
                 {
                     //error
                     StringBuilder message = new StringBuilder();
@@ -72,7 +73,7 @@ namespace Sector9.Server.Buildings
                     Logger.Log(message.ToString(), Logger.Severity.Error, Logger.LogType.Server);
                     IsValid = false;
                 }
-                else if (InitWorker.IsComplete)
+                else if (DamageHandler != null && InitWorker.IsComplete)
                 {
                     Logger.Log($"Building {PrefabName} Initialized!", Logger.Severity.Info, Logger.LogType.Server);
                     Init = true;
