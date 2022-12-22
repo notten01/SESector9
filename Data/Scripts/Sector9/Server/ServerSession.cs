@@ -134,6 +134,7 @@ namespace Sector9.Server
         public void Tick()
         {
             UnitCommander.Tick();
+            BuildingCommander.Tick();
             Firewall.Tick();
         }
 
