@@ -17,7 +17,7 @@ using VRage.ObjectBuilders;
 using static Sector9.Api.WcApiDef;
 using static Sector9.Api.WcApiDef.WeaponDefinition;
 
-namespace Sector9.Server.Units
+namespace Sector9.Server
 {
     internal class Provider : ITickable
     {
@@ -35,7 +35,6 @@ namespace Sector9.Server.Units
             Reactors = fatBlocks.OfType<MyReactor>().ToList();
             Batteries = fatBlocks.OfType<MyBatteryBlock>().ToList();
             var uraniumId = new MyDefinitionId(typeof(MyObjectBuilder_Ingot), "Uranium");
-            Logger.Log($"Trying to find {uraniumId} : {uraniumId.TypeId} : {uraniumId.SubtypeId}", Logger.Severity.Info, Logger.LogType.Server);
             FuelItem = MyObjectBuilderSerializer.CreateNewObject(uraniumId) as MyObjectBuilder_Ingot;
             Weapons = new List<WeaponWrapper>();
             Tanks = fatBlocks.OfType<IMyGasTank>().ToList();
