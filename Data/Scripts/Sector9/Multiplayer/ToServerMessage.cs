@@ -5,7 +5,8 @@ namespace Sector9.Multiplayer
     public enum ToLayerType : int
     {
         Spawn,
-        TestSpawn
+        TestSpawn,
+        TestBuild
     }
 
     [ProtoContract]

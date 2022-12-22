@@ -2,6 +2,7 @@
 using Sector9.Core.Logging;
 using Sector9.Data.Scripts.Sector9.Multiplayer.ToLayer;
 using Sector9.Multiplayer;
+using Sector9.Server.Buildings;
 using Sector9.Server.Targets;
 using Sector9.Server.Units;
 using Sector9.Server.Units.Behaviours;
@@ -38,6 +39,10 @@ namespace Sector9.Core
 
                 case ToLayerType.TestSpawn:
                     SpawnTestGrid(MyAPIGateway.Utilities.SerializeFromBinary<Spawn>(command.PayLoad), command.FromPlayerId);
+                    break;
+
+                case ToLayerType.TestBuild:
+                    SpawnTestBuilding(MyAPIGateway.Utilities.SerializeFromBinary<Spawn>(command.PayLoad), command.FromPlayerId);
                     break;
 
                 default:
@@ -80,6 +85,22 @@ namespace Sector9.Core
             }
         }
 
+        public void SpawnTestBuilding(Spawn content, long playerId)
+        {
+            if (!EnsureAdmin(playerId)) { return; }
+
+            List<IMyEntity> gridParts = Core.ServerSession.TestBuild(content.Name);
+            if (gridParts != null)
+            {
+                Building building = new Building(gridParts, Core.ServerSession.BuildingCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary);
+                SyncManager.Instance.SendMessageFromServer($"Spawned {content.Name} from prefabs folder for testing", playerId);
+            }
+            else
+            {
+                SyncManager.Instance.SendMessageFromServer($"Could not spawn {content.Name} from prefab folder, most likely the file does not exist (typo in name?)", playerId);
+            }
+        }
+
         private static bool EnsureAdmin(long id)
         {
             var players = new List<IMyPlayer>();
@@ -112,6 +133,11 @@ namespace Sector9.Core
             {
                 Spawn spawn = new Spawn() { Name = parts[2] };
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.Spawn, spawn);
+            }
+            else if (parts.Length == 3 && parts[1] == "testBuild")
+            {
+                Spawn spawn = new Spawn() { Name = parts[2] };
+                SyncManager.Instance.SendPayloadToServer(ToLayerType.TestBuild, spawn);
             }
         }
 

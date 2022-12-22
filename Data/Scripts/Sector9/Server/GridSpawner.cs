@@ -34,9 +34,10 @@ namespace Sector9.Server
         /// </summary>
         /// <param name="name">Name of prefab to the grid('s) from</param>
         /// <param name="Location">Positon in world matrix where to spawn the ship</param>
+        /// <param name="height">Height above the ground (if applicable) to spawn</param>
         /// <param name="spawnedGrids">List of grids that got spawned</param>
         /// <returns>Spawning was a success</returns>
-        public bool TrySpawnGrid(string name, MatrixD Location, out List<IMyEntity> spawnedGrids)
+        public bool TrySpawnGrid(string name, MatrixD Location, int height, out List<IMyEntity> spawnedGrids)
         {
             MyPrefabDefinition definition;
             if (!DefinitionsCache.TryGetValue(name, out definition))
@@ -46,7 +47,7 @@ namespace Sector9.Server
                 return false;
             }
 
-            MatrixD position = PlanetSafety(Location, 1000).GetMatrix();
+            MatrixD position = PlanetSafety(Location, height).GetMatrix();
             var size = GetGridSize(definition);
             var distance = (Math.Sqrt(size.LengthSquared()) * ToGridLength(definition.CubeGrids[0].GridSizeEnum) / 2);
             var spawnPoint = position.Translation + position.Forward * distance;

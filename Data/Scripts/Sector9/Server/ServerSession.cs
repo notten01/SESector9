@@ -3,6 +3,7 @@ using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
 using Sector9.Multiplayer;
+using Sector9.Server.Buildings;
 using Sector9.Server.FireWall;
 using Sector9.Server.Units;
 using Server.Data;
@@ -40,6 +41,7 @@ namespace Sector9.Server
             WeaponsCore.Load(null, true);
             BlockLibrary = new DefinitionLibrary(WeaponsCore);
             UnitCommander = new UnitCommander(DamageHandler);
+            BuildingCommander = new BuildingCommander(DamageHandler);
             CommandHandler = new AdmCommandHandler(core);
         }
 
@@ -47,6 +49,7 @@ namespace Sector9.Server
         public bool EnableLog => Data.EnableLog;
         public Planets Planets { get; }
         public UnitCommander UnitCommander { get; }
+        public BuildingCommander BuildingCommander { get; }
         public Wc WeaponsCore { get; }
 
         public void Save()
@@ -81,7 +84,7 @@ namespace Sector9.Server
             pos.Add(new Vector3(10, 10, 10));
             var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid(shipName, positionMatrix, out createdGrids);
+            Spawner.TrySpawnGrid(shipName, positionMatrix, 500, out createdGrids);
             if (createdGrids != null)
             {
                 foreach (var grid in createdGrids)
@@ -101,11 +104,30 @@ namespace Sector9.Server
 
         public List<IMyEntity> TestSpawn(string name)
         {
-            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
-            pos.Add(Vector3D.Up * 20);
-            var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
+            var player = MyAPIGateway.Session.LocalHumanPlayer;
+            Vector3 pos = player.GetPosition();
+            var playerMatrix = player.Character.GetHeadMatrix(true);
+            pos.Add(playerMatrix.Forward * 50);
+            var positionMatrix = MatrixD.CreateWorld(pos, playerMatrix.Forward, playerMatrix.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid(name, positionMatrix, out createdGrids);
+            Spawner.TrySpawnGrid(name, positionMatrix, 500, out createdGrids);
+            return createdGrids;
+        }
+
+        /// <summary>
+        /// Test spawn a structure
+        /// </summary>
+        /// <param name="name">Name of blueprint to spawn as structure</param>
+        /// <returns>List of entities created, main entry on [0]</returns>
+        public List<IMyEntity> TestBuild(string name)
+        {
+            var player = MyAPIGateway.Session.LocalHumanPlayer;
+            var playerMatrix = player.Character.GetHeadMatrix(true);
+            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
+            pos.Add(playerMatrix.Forward * 50);
+            MatrixD positionMatrix = MatrixD.CreateWorld(pos, playerMatrix.Forward, playerMatrix.Up);
+            List<IMyEntity> createdGrids;
+            Spawner.TrySpawnGrid(name, positionMatrix, 0, out createdGrids);
             return createdGrids;
         }
 
