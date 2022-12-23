@@ -43,17 +43,22 @@ namespace Sector9.Server.FireWall
             {
                 if (Firewall.GetOwnerFactionTag() != factionManager.HostileFaciton.Tag)
                 {
-                    Logger.Log("Found existing firewall in savegame", Logger.Severity.Info, Logger.LogType.Server);
                     ValidFirewall = Firewall.IsWorking;
                     Firewall.IsWorkingChanged += FirewallChanged;
                     Firewall.OnMarkForClose += FirewallClosing;
+                    Logger.Log($"Found existing firewall in savegame, valid: {ValidFirewall}, countdown: {Data.FirewallCountdown}", Logger.Severity.Info, Logger.LogType.Server);
                 }
                 else
                 {
                     Firewall.Close(); //belongs to a none human faction
                     HasFirewall = false;
+                    ValidFirewall = false;
                     Logger.Log("Firewall was found to was not part of the human faction", Logger.Severity.Warning, Logger.LogType.Server);
                 }
+            }
+            if (ValidFirewall)
+            {
+                Data.ResetCountdownn();
             }
             BeginGridTracking();
         }
@@ -98,6 +103,7 @@ namespace Sector9.Server.FireWall
             if (!IsFirewallValid())
             {
                 Data.FirewallCountdown--;
+                Logger.Log($"Firewall countdown now {Data.FirewallCountdown}", Logger.Severity.Info, Logger.LogType.Server);
                 WasValidLastCycle = false;
                 if (Data.FirewallCountdown <= 0)
                 {
@@ -110,6 +116,7 @@ namespace Sector9.Server.FireWall
                 if (!WasValidLastCycle)
                 {
                     Data.ResetCountdownn();
+                    WasValidLastCycle = true;
                 }
             }
         }
