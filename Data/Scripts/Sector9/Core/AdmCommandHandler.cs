@@ -18,7 +18,7 @@ namespace Sector9.Core
     /// <summary>
     /// class handles commands received by text
     /// </summary>
-    public class AdmCommandHandler
+    internal class AdmCommandHandler
     {
         private readonly CoreSession Core;
 
@@ -45,10 +45,20 @@ namespace Sector9.Core
                     SpawnTestBuilding(MyAPIGateway.Utilities.SerializeFromBinary<Spawn>(command.PayLoad), command.FromPlayerId);
                     break;
 
+                case ToLayerType.ResetCountdown:
+                    ResetFirewallCountdown(command.FromPlayerId);
+                    break;
+
                 default:
                     Logger.Log($"Did not know how to handle to layer type {type}", Logger.Severity.Error, Logger.LogType.Server);
                     break;
             }
+        }
+
+        private void ResetFirewallCountdown(long playerId)
+        {
+            Core.ServerSession.Firewall.ResetCountdown();
+            SyncManager.Instance.SendMessageFromServer($"Firewall countdown is reset", playerId);
         }
 
         private void SpawnEnemy(Spawn content, long playerId)
@@ -105,7 +115,7 @@ namespace Sector9.Core
         {
             var players = new List<IMyPlayer>();
             MyAPIGateway.Players.GetPlayers(players, x => x.IdentityId == id);
-            bool isAdmin = (players.Count != 0 && players.First().PromoteLevel == MyPromoteLevel.Admin || players.First().PromoteLevel == MyPromoteLevel.Owner);
+            bool isAdmin = (players.Count != 0 && players[0].PromoteLevel == MyPromoteLevel.Admin || players[0].PromoteLevel == MyPromoteLevel.Owner);
             if (!isAdmin)
             {
                 SyncManager.Instance.SendMessageFromServer("You have to be moderator to do this!", id);
@@ -138,6 +148,13 @@ namespace Sector9.Core
             {
                 Spawn spawn = new Spawn() { Name = parts[2] };
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.TestBuild, spawn);
+            } else if (parts.Length == 2 && parts[2] == "reset-countdown")
+            {
+                SyncManager.Instance.SendPayloadToServer(ToLayerType.ResetCountdown, new ResetCountdown());
+            }
+            else
+            {
+                SyncManager.Instance.SendMessageFromServer("Unknown command, try /s9adm help", MyAPIGateway.Session.LocalHumanPlayer.IdentityId);
             }
         }
 

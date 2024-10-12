@@ -7,7 +7,7 @@ namespace Sector9.Multiplayer
     /// <summary>
     /// Class that will sync between client server (if multiplayer)...also known as nightmare.cs
     /// </summary>
-    public class SyncManager
+    internal class SyncManager
     {
         public const int SyncIdToServer = 11557; //s9
         public const int SyncIdToClient = 11558; //s9+1

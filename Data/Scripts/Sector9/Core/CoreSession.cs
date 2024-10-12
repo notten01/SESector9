@@ -11,7 +11,7 @@ namespace Sector9.Core
     /// Contains the primary hookup point to the game api
     /// </summary>
     [MySessionComponentDescriptor(MyUpdateOrder.BeforeSimulation)]
-    public class CoreSession : MySessionComponentBase
+    internal class CoreSession : MySessionComponentBase
     {
         public ServerSession ServerSession { get; private set; }
         public ClientSession ClientSession { get; private set; }

@@ -6,7 +6,8 @@ namespace Sector9.Multiplayer
     {
         Notification,
         Sound,
-        Message
+        Message,
+        GameOver
     }
 
     [ProtoContract]

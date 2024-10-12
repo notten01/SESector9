@@ -32,6 +32,10 @@ namespace Sector9.Client
                     PlaySound(MyAPIGateway.Utilities.SerializeFromBinary<Sound>(message.Payload));
                     break;
 
+                case FromLayerType.GameOver:
+                    MyAPIGateway.Utilities.ShowMissionScreen("GAME OVER", "Your firewall was destroyed, the game has ended");
+                    break;
+
                 default:
                     Logger.Log($"System did not know how to handle message type {message.LayerType}", Logger.Severity.Error, Logger.LogType.Client);
                     break;

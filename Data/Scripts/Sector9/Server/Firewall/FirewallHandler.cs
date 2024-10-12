@@ -23,13 +23,12 @@ namespace Sector9.Server.FireWall
         private bool HasFirewall;
         private int tickIndex = 7;
         private bool ValidFirewall;
-        private bool WasValidLastCycle;
+        private bool GameEnded = false;
         //small offset so not every system tick on the same cycle
         //todo: you can save the grid with the firewall with the entity id
 
         public FirewallHandler(FactionManager factionManager)
         {
-            WasValidLastCycle = true;
             TryLoad();
             FactionManager = factionManager;
             ScanForFirewall();
@@ -56,11 +55,15 @@ namespace Sector9.Server.FireWall
                     Logger.Log("Firewall was found to was not part of the human faction", Logger.Severity.Warning, Logger.LogType.Server);
                 }
             }
-            if (ValidFirewall)
-            {
-                Data.ResetCountdownn();
-            }
             BeginGridTracking();
+        }
+
+        /// <summary>
+        /// reset the current firewall countdown (cheat!)
+        /// </summary>
+        public void ResetCountdown()
+        {
+            Data.ResetCountdownn();
         }
 
         /// <summary>
@@ -93,6 +96,13 @@ namespace Sector9.Server.FireWall
 
         public void Tick()
         {
+            if (Data.GameOver && !GameEnded)
+            {
+                GameEnded = true;
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.GameOver, new GameOver());
+                Firewall.OnMarkForClose -= FirewallClosing;
+                Firewall.IsWorkingChanged -= FirewallChanged;
+            }
             if (tickIndex < 60)
             {
                 tickIndex++;
@@ -103,7 +113,6 @@ namespace Sector9.Server.FireWall
             if (!IsFirewallValid())
             {
                 Data.FirewallCountdown--;
-                WasValidLastCycle = false;
                 if (Data.FirewallCountdown <= 0)
                 {
                     Logger.Log("Game over!", Logger.Severity.Warning, Logger.LogType.System);
@@ -112,11 +121,7 @@ namespace Sector9.Server.FireWall
             }
             else
             {
-                if (!WasValidLastCycle)
-                {
-                    Data.ResetCountdownn();
-                    WasValidLastCycle = true;
-                }
+                Data.IncreaseCountdown();
             }
         }
 

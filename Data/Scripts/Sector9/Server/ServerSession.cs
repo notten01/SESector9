@@ -18,11 +18,11 @@ namespace Sector9.Server
     /// <summary>
     /// Session for the server, keeping track of game stats. Can exist togheter with <see cref="PlayerSession"/> if its a locally hosted game
     /// </summary>
-    public class ServerSession : ITickable
+    internal class ServerSession : ITickable
     {
         private const string cDataFileName = "S9ServerSession.xml";
         private readonly FactionManager Factions;
-        private readonly FirewallHandler Firewall;
+        public FirewallHandler Firewall { get; private set; }
         private readonly GridSpawner Spawner;
         private readonly DamageHandler DamageHandler;
         private readonly AdmCommandHandler CommandHandler;
@@ -136,6 +136,7 @@ namespace Sector9.Server
             UnitCommander.Tick();
             BuildingCommander.Tick();
             Firewall.Tick();
+
         }
 
         internal void HandleServerMessage(ToServerMessage message)
