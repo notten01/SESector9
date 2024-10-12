@@ -13,7 +13,7 @@ using VRage.ModAPI;
 
 namespace Sector9.Server.FireWall
 {
-    internal class FirewallHandler : ITickable
+    public class FirewallHandler : ITickable
     {
         private const string cDataFilename = "S9FirewallTracking.xml";
         private const string FirewallName = "Firewall";
@@ -23,13 +23,12 @@ namespace Sector9.Server.FireWall
         private bool HasFirewall;
         private int tickIndex = 7;
         private bool ValidFirewall;
-        private bool WasValidLastCycle;
+        private bool GameEnded = false;
         //small offset so not every system tick on the same cycle
         //todo: you can save the grid with the firewall with the entity id
 
         public FirewallHandler(FactionManager factionManager)
         {
-            WasValidLastCycle = true;
             TryLoad();
             FactionManager = factionManager;
             ScanForFirewall();
@@ -50,17 +49,21 @@ namespace Sector9.Server.FireWall
                 }
                 else
                 {
-                    Firewall.Close(); //belongs to a none human faction
+                    Firewall.CubeGrid.RemoveBlock(Firewall.SlimBlock);
                     HasFirewall = false;
                     ValidFirewall = false;
                     Logger.Log("Firewall was found to was not part of the human faction", Logger.Severity.Warning, Logger.LogType.Server);
                 }
             }
-            if (ValidFirewall)
-            {
-                Data.ResetCountdownn();
-            }
             BeginGridTracking();
+        }
+
+        /// <summary>
+        /// reset the current firewall countdown (cheat!)
+        /// </summary>
+        public void ResetCountdown()
+        {
+            Data.ResetCountdownn();
         }
 
         /// <summary>
@@ -93,6 +96,13 @@ namespace Sector9.Server.FireWall
 
         public void Tick()
         {
+            if (Data.GameOver && !GameEnded)
+            {
+                GameEnded = true;
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.GameOver, new GameOver());
+                Firewall.OnMarkForClose -= FirewallClosing;
+                Firewall.IsWorkingChanged -= FirewallChanged;
+            }
             if (tickIndex < 60)
             {
                 tickIndex++;
@@ -103,8 +113,6 @@ namespace Sector9.Server.FireWall
             if (!IsFirewallValid())
             {
                 Data.FirewallCountdown--;
-                Logger.Log($"Firewall countdown now {Data.FirewallCountdown}", Logger.Severity.Info, Logger.LogType.Server);
-                WasValidLastCycle = false;
                 if (Data.FirewallCountdown <= 0)
                 {
                     Logger.Log("Game over!", Logger.Severity.Warning, Logger.LogType.System);
@@ -113,11 +121,7 @@ namespace Sector9.Server.FireWall
             }
             else
             {
-                if (!WasValidLastCycle)
-                {
-                    Data.ResetCountdownn();
-                    WasValidLastCycle = true;
-                }
+                Data.IncreaseCountdown();
             }
         }
 
@@ -196,6 +200,16 @@ namespace Sector9.Server.FireWall
         private void FirewallChanged(IMyCubeBlock obj)
         {
             ValidFirewall = obj.IsWorking;
+            if (!ValidFirewall)
+            {
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "3urgentbeep" }); //firewall stopped functioning
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-offline" });//firewall offline
+            }
+            else
+            {
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewallOn" }); //firewall online
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-online" });//firewall online
+            }
             Logger.Log($"Firewall functioning state changed to {ValidFirewall}", Logger.Severity.Info, Logger.LogType.Server);
         }
 
@@ -205,6 +219,8 @@ namespace Sector9.Server.FireWall
             HasFirewall = false;
             Firewall.IsWorkingChanged -= FirewallChanged;
             Firewall.OnMarkForClose -= FirewallClosing;
+            SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "3hardbeep" });
+            SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-destroyed" });
             Logger.Log("Firewall is destroyed!", Logger.Severity.Info, Logger.LogType.Server);
         }
 

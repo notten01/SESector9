@@ -45,5 +45,125 @@
 				</Wave>
 			</Waves>
 		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>2firmbeep</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\2fimbeep.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>3hardbeep</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\3hardbeep.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>3urgentbeep</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\3urgentbeep.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>firewallOn</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\firewallOn.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>firewall-online</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\firewall-online.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>firewall-offline</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\firewall-offline.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>firewall-destroyed</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\firewall-destroyed.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
+		<Sound>
+			<Id>
+				<TypeId>AudioDefinition</TypeId>
+				<SubtypeId>first-greeting</SubtypeId>
+			</Id>
+			<Category>s9sounds</Category>
+			<MaxDistance>1000</MaxDistance>
+			<Volume>1</Volume>
+			<Loopable>false</Loopable>
+			<Waves>
+				<Wave Type="D2">
+					<Start>Sounds\first-greeting.xwm</Start>
+				</Wave>
+			</Waves>
+		</Sound>
 	</Sounds>
 </Definitions>

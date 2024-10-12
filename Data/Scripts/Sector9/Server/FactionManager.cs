@@ -8,7 +8,7 @@ namespace Sector9.Server
     /// <summary>
     /// System that handles factions within the game session
     /// </summary>
-    internal class FactionManager
+    public class FactionManager
     {
         private const string cSystemName = "VGhlU3lzdGVt";
         private const string cHumanityName = "Sector 1";

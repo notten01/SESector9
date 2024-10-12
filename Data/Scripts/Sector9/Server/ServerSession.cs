@@ -22,7 +22,7 @@ namespace Sector9.Server
     {
         private const string cDataFileName = "S9ServerSession.xml";
         private readonly FactionManager Factions;
-        private readonly FirewallHandler Firewall;
+        public FirewallHandler Firewall { get; private set; }
         private readonly GridSpawner Spawner;
         private readonly DamageHandler DamageHandler;
         private readonly AdmCommandHandler CommandHandler;
@@ -136,6 +136,7 @@ namespace Sector9.Server
             UnitCommander.Tick();
             BuildingCommander.Tick();
             Firewall.Tick();
+
         }
 
         internal void HandleServerMessage(ToServerMessage message)
