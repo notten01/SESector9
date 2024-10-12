@@ -4,9 +4,17 @@ using Sector9.Core.Logging;
 using Sector9.Multiplayer;
 using Sector9.Server;
 using System;
+using VRage.Scripting;
 
 namespace Sector9.Client
 {
+    internal enum FirewallState
+    {
+        Operational,
+        Broken,
+        Missing
+    }
+
     /// <summary>
     /// session handing player related items. Can existin togheter with <see cref="ServerSession"/> if its locally hosted
     /// </summary>
@@ -16,12 +24,15 @@ namespace Sector9.Client
         private ClientData Data;
         public SoundPlayer SoundPlayer { get; }
         private ClientMessageHandler MessageHandler;
+        private bool FirstTime = false;
+        //public ClientHud Hud { get; }
 
         public ClientSession()
         {
             TryLoad();
-            MessageHandler = new ClientMessageHandler();
+            MessageHandler = new ClientMessageHandler(this);
             SoundPlayer = new SoundPlayer();
+            //Hud = new ClientHud(this);
         }
 
         public bool EnableLog => Data.EnableLog;
@@ -41,6 +52,7 @@ namespace Sector9.Client
 
         public void Tick()
         {
+            //Hud.Tick();
             SoundPlayer.Tick();
         }
 
@@ -48,6 +60,11 @@ namespace Sector9.Client
         {
             MyAPIGateway.Multiplayer.RegisterSecureMessageHandler(SyncManager.SyncIdToClient, syncManager.NetworkClientMessageRecieved);
             MessageHandler.Startup();
+            if (FirstTime)
+            {
+                SoundPlayer.PlaySoundInQueue(MyAPIGateway.Session.Player.GetPosition(), "first-greeting");
+            }
+            MyAPIGateway.Utilities.ShowMessage("B.O.B", "Use /eva help for more suit information and functionality");
         }
 
         public void Shutdown(SyncManager syncManager)
@@ -75,6 +92,7 @@ namespace Sector9.Client
             if (Data == null)
             {
                 Data = new ClientData();
+                FirstTime = true;
             }
             Data.Version = S9Constants.Version;
         }

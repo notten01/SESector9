@@ -50,7 +50,7 @@ namespace Sector9.Server.FireWall
                 }
                 else
                 {
-                    Firewall.Close(); //belongs to a none human faction
+                    Firewall.CubeGrid.RemoveBlock(Firewall.SlimBlock);
                     HasFirewall = false;
                     ValidFirewall = false;
                     Logger.Log("Firewall was found to was not part of the human faction", Logger.Severity.Warning, Logger.LogType.Server);
@@ -103,7 +103,6 @@ namespace Sector9.Server.FireWall
             if (!IsFirewallValid())
             {
                 Data.FirewallCountdown--;
-                Logger.Log($"Firewall countdown now {Data.FirewallCountdown}", Logger.Severity.Info, Logger.LogType.Server);
                 WasValidLastCycle = false;
                 if (Data.FirewallCountdown <= 0)
                 {
@@ -196,6 +195,16 @@ namespace Sector9.Server.FireWall
         private void FirewallChanged(IMyCubeBlock obj)
         {
             ValidFirewall = obj.IsWorking;
+            if (!ValidFirewall)
+            {
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "3urgentbeep" }); //firewall stopped functioning
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-offline" });//firewall offline
+            }
+            else
+            {
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewallOn" }); //firewall online
+                SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-online" });//firewall online
+            }
             Logger.Log($"Firewall functioning state changed to {ValidFirewall}", Logger.Severity.Info, Logger.LogType.Server);
         }
 
@@ -205,6 +214,8 @@ namespace Sector9.Server.FireWall
             HasFirewall = false;
             Firewall.IsWorkingChanged -= FirewallChanged;
             Firewall.OnMarkForClose -= FirewallClosing;
+            SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "3hardbeep" });
+            SyncManager.Instance.SendPayloadFromServer(FromLayerType.Sound, new Sound() { Queue = true, SoundName = "firewall-destroyed" });
             Logger.Log("Firewall is destroyed!", Logger.Severity.Info, Logger.LogType.Server);
         }
 

@@ -37,7 +37,7 @@ namespace Sector9.Multiplayer
         /// <param name="type">Type of payload to send</param>
         /// <param name="payload">payload itself</param>
         /// <param name="playerId">optional player id if the message should only go to that player</param>
-        public void SendPayloadFromServer(FromLayerType type, object payload, long? playerId)
+        public void SendPayloadFromServer(FromLayerType type, object payload, long? playerId = null)
         {
             FromServerMessage wrapper = new FromServerMessage() { PlayerId = playerId, LayerType = (int)type, Payload = MyAPIGateway.Utilities.SerializeToBinary(payload) };
             SendServerPayload(wrapper);
