@@ -4,7 +4,6 @@ using Sector9.Core.Logging;
 using Sector9.Multiplayer;
 using Sector9.Server;
 using System;
-using VRage.Scripting;
 
 namespace Sector9.Client
 {

@@ -148,7 +148,8 @@ namespace Sector9.Core
             {
                 Spawn spawn = new Spawn() { Name = parts[2] };
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.TestBuild, spawn);
-            } else if (parts.Length == 2 && parts[2] == "reset-countdown")
+            }
+            else if (parts.Length == 3 && parts[1] == "reset" && parts[2] == "countdown")
             {
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.ResetCountdown, new ResetCountdown());
             }

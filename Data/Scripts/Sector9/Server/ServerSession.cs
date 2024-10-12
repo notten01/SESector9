@@ -18,7 +18,7 @@ namespace Sector9.Server
     /// <summary>
     /// Session for the server, keeping track of game stats. Can exist togheter with <see cref="PlayerSession"/> if its a locally hosted game
     /// </summary>
-    internal class ServerSession : ITickable
+    public class ServerSession : ITickable
     {
         private const string cDataFileName = "S9ServerSession.xml";
         private readonly FactionManager Factions;

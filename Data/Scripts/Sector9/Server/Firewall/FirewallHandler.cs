@@ -13,7 +13,7 @@ using VRage.ModAPI;
 
 namespace Sector9.Server.FireWall
 {
-    internal class FirewallHandler : ITickable
+    public class FirewallHandler : ITickable
     {
         private const string cDataFilename = "S9FirewallTracking.xml";
         private const string FirewallName = "Firewall";
