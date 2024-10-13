@@ -36,15 +36,16 @@ namespace Sector9.Server
         /// <param name="Location">Positon in world matrix where to spawn the ship</param>
         /// <param name="height">Height above the ground (if applicable) to spawn</param>
         /// <param name="spawnedGrids">List of grids that got spawned</param>
-        /// <returns>Spawning was a success</returns>
-        public bool TrySpawnGrid(string name, MatrixD Location, int height, out List<IMyEntity> spawnedGrids)
+        /// <param name="callBack">Callback function called once entity list is ready</param>
+        /// <returns>Total number of grids spawning</returns>
+        public int TrySpawnGrid(string name, MatrixD Location, int height, out List<IMyEntity> spawnedGrids, Action<IMyEntity> callBack)
         {
             MyPrefabDefinition definition;
             if (!DefinitionsCache.TryGetValue(name, out definition))
             {
                 Logger.Log($"Could not find grid {name} to spawn!", Logger.Severity.Error, Logger.LogType.Server);
                 spawnedGrids = null;
-                return false;
+                return 0;
             }
 
             MatrixD position = PlanetSafety(Location, height).GetMatrix();
@@ -62,9 +63,9 @@ namespace Sector9.Server
                 gridBuilder.PositionAndOrientation = new MyPositionAndOrientation(grid.PositionAndOrientation.Value.Position + offset, grid.PositionAndOrientation.Value.Forward, grid.PositionAndOrientation.Value.Up);
                 tmpList.Add(gridBuilder);
             }
-            spawnedGrids = CreateAndSyncEntities(tmpList);
+            spawnedGrids = CreateAndSyncEntities(tmpList, callBack);
             Logger.Log($"Spawned in grid {name}", Logger.Severity.Info, Logger.LogType.Server);
-            return true;
+            return tmpList.Count;
         }
 
         private MyPositionAndOrientation PlanetSafety(MatrixD location, int height)
@@ -107,10 +108,10 @@ namespace Sector9.Server
             return MyDefinitionManager.Static.GetCubeSize(cubeSize);
         }
 
-        private List<IMyEntity> CreateAndSyncEntities(List<MyObjectBuilder_EntityBase> entities)
+        private static List<IMyEntity> CreateAndSyncEntities(List<MyObjectBuilder_EntityBase> entities, Action<IMyEntity> callback)
         {
             MyAPIGateway.Entities.RemapObjectBuilderCollection(entities);
-            List<IMyEntity> output = entities.Select(objBase => MyAPIGateway.Entities.CreateFromObjectBuilderAndAdd(objBase)).ToList();
+            List<IMyEntity> output = entities.Select(objBase => MyAPIGateway.Entities.CreateFromObjectBuilderParallel(objBase, true, callback)).ToList();
             return output;
         }
     }
