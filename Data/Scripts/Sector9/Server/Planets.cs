@@ -42,8 +42,9 @@ namespace Sector9.Server
         public static Vector3D GetGravityDirection(MyPlanet planet, Vector3D location)
         {
             var ent = planet as IMyEntity;
-            var grafity = ent.GetPosition();
-            return new Vector3D(grafity.X - location.X, grafity.Y - location.Y, grafity.Z - location.Z);
+            var position = ent.GetPosition();
+            var gravity = position - location;
+            return Vector3D.Normalize(gravity);
         }
 
         public static Vector3D Reverse(Vector3D grafity)

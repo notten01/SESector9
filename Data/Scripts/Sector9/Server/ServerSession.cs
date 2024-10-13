@@ -81,11 +81,9 @@ namespace Sector9.Server
         /// <param name="shipName">Name of the prefab to spawn</param>
         /// <param name="callback">Callback when grid with subgrids is ready</param>
         /// <returns>True or false is the spawning was successfull</returns>
-        public void SpawnHostileShip(string shipName, Action<WorkData> callback)
+        public void SpawnHostileShip(string shipName, Action<WorkData> callback, Vector3 desiredPostion)
         {
-            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
-            pos.Add(new Vector3(10, 10, 10));
-            var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
+            var positionMatrix = MatrixD.CreateWorld(desiredPostion, Vector3D.Forward, Vector3D.Up);
             List<IMyEntity> createdGrids;
             HostileCallback wrapper = new HostileCallback(Factions, callback);
             wrapper.TotalGrids = Spawner.TrySpawnGrid(shipName, positionMatrix, 500, out createdGrids, wrapper.Run);

@@ -5,7 +5,7 @@
     /// </summary>
     public static class S9Constants
     {
-        public const string Version = "0.0.1";
+        public const string Version = "0.0.2";
         public const string SystemName = "sys.sector9";
     }
 }
