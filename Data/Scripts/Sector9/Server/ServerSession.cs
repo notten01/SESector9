@@ -1,4 +1,5 @@
-﻿using Sandbox.ModAPI;
+﻿using ParallelTasks;
+using Sandbox.ModAPI;
 using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
@@ -9,6 +10,7 @@ using Sector9.Server.Units;
 using Server.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using VRage.Game.ModAPI;
 using VRage.ModAPI;
 using VRageMath;
@@ -77,23 +79,68 @@ namespace Sector9.Server
         /// Spawn a ship belonging to the hostile faction
         /// </summary>
         /// <param name="shipName">Name of the prefab to spawn</param>
+        /// <param name="callback">Callback when grid with subgrids is ready</param>
         /// <returns>True or false is the spawning was successfull</returns>
-        public List<IMyEntity> SpawnHostileShip(string shipName)
+        public void SpawnHostileShip(string shipName, Action<WorkData> callback)
         {
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
             pos.Add(new Vector3(10, 10, 10));
             var positionMatrix = MatrixD.CreateWorld(pos, Vector3D.Forward, Vector3D.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid(shipName, positionMatrix, 500, out createdGrids);
-            if (createdGrids != null)
+            HostileCallback wrapper = new HostileCallback(Factions, callback);
+            wrapper.TotalGrids = Spawner.TrySpawnGrid(shipName, positionMatrix, 500, out createdGrids, wrapper.Run);
+        }
+
+        public sealed class HostileCallback : WorkData
+        {
+            private readonly FactionManager Factions;
+            public Action<IMyEntity> Run { get; }
+
+            public List<IMyEntity> AllGrids { get; private set; }
+            public int TotalGrids { get; set; }
+            private int ReportedGrids = 0;
+            public bool Ready { get; private set; }
+            public Action<WorkData> FullCallback { get; }
+
+            private readonly object SpawnRequestLock = new object();
+
+            public HostileCallback(FactionManager factions, Action<WorkData> fullCallback)
             {
-                foreach (var grid in createdGrids)
-                {
-                    Factions.AssignGridToHostileFaction(grid as IMyCubeGrid);
-                }
-                return createdGrids;
+                Factions = factions;
+                Run = InternalCallback;
+                AllGrids = new List<IMyEntity>();
+                Ready = false;
+                FullCallback = fullCallback;
             }
-            return null;
+
+
+            private void InternalCallback(IMyEntity entity)
+            {
+                lock (SpawnRequestLock)
+                {
+                    if (entity == null)
+                    {
+                        return;
+                    }
+                    Factions.AssignGridToHostileFaction(entity as IMyCubeGrid);
+                    AllGrids.Add(entity);
+                    ReportedGrids++;
+                    if (ReportedGrids == TotalGrids && !Ready)
+                    {
+                        Ready = true;
+                        AllGrids = AllGrids.OrderBy(x => {
+                            List<IMySlimBlock> blocks = new List<IMySlimBlock>();
+                            ((IMyCubeGrid)x).GetBlocks(blocks);
+                            return blocks.Count;
+                        }).ToList();
+                        MyAPIGateway.Parallel.Start(FullCallback, EmptyMethod, this);
+                    }
+                }
+            }
+
+            private void EmptyMethod(WorkData data)
+            {//empty on purpose
+            }
         }
 
         public void Startup(SyncManager syncManager)
@@ -102,7 +149,7 @@ namespace Sector9.Server
             CommandHandler.Startup();
         }
 
-        public List<IMyEntity> TestSpawn(string name)
+        public void TestSpawn(string name, Action<WorkData> callBack)
         {
             var player = MyAPIGateway.Session.LocalHumanPlayer;
             Vector3 pos = player.GetPosition();
@@ -110,8 +157,58 @@ namespace Sector9.Server
             pos.Add(playerMatrix.Forward * 50);
             var positionMatrix = MatrixD.CreateWorld(pos, playerMatrix.Forward, playerMatrix.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid(name, positionMatrix, 500, out createdGrids);
-            return createdGrids;
+            TestSpawnWrapper wrapper = new TestSpawnWrapper(callBack);
+            Spawner.TrySpawnGrid(name, positionMatrix, 500, out createdGrids, wrapper.Run);
+            wrapper.TotalGrids = createdGrids.Count;
+        }
+
+        public class TestSpawnWrapper : WorkData
+        {
+            public Action<IMyEntity> Run { get; }
+
+            public List<IMyEntity> AllGrids { get; private set; }
+            public int TotalGrids { get; set; }
+            private int ReportedGrids = 0;
+            public bool Ready { get; private set; }
+            public Action<WorkData> FullCallback { get; }
+
+            private readonly object SpawnRequestLock = new object();
+
+            public TestSpawnWrapper(Action<WorkData> fullCallback)
+            {
+                Run = InternalCallback;
+                AllGrids = new List<IMyEntity>();
+                Ready = false;
+                FullCallback = fullCallback;
+            }
+
+
+            private void InternalCallback(IMyEntity entity)
+            {
+                lock (SpawnRequestLock)
+                {
+                    if (entity == null)
+                    {
+                        return;
+                    }
+                    AllGrids.Add(entity);
+                    ReportedGrids++;
+                    if (ReportedGrids == TotalGrids && !Ready)
+                    {
+                        Ready = true;
+                        AllGrids = AllGrids.OrderBy(x => {
+                            List<IMySlimBlock> blocks = new List<IMySlimBlock>();
+                            ((IMyCubeGrid)x).GetBlocks(blocks);
+                            return blocks.Count;
+                        }).ToList();
+                        MyAPIGateway.Parallel.Start(FullCallback, EmptyMethod, this);
+                    }
+                }
+            }
+
+            private void EmptyMethod(WorkData data)
+            {//empty on purpose
+            }
         }
 
         /// <summary>
@@ -119,7 +216,7 @@ namespace Sector9.Server
         /// </summary>
         /// <param name="name">Name of blueprint to spawn as structure</param>
         /// <returns>List of entities created, main entry on [0]</returns>
-        public List<IMyEntity> TestBuild(string name)
+        public void TestBuild(string name, Action<WorkData> callBack)
         {
             var player = MyAPIGateway.Session.LocalHumanPlayer;
             var playerMatrix = player.Character.GetHeadMatrix(true);
@@ -127,8 +224,9 @@ namespace Sector9.Server
             pos.Add(playerMatrix.Forward * 50);
             MatrixD positionMatrix = MatrixD.CreateWorld(pos, playerMatrix.Forward, playerMatrix.Up);
             List<IMyEntity> createdGrids;
-            Spawner.TrySpawnGrid(name, positionMatrix, 0, out createdGrids);
-            return createdGrids;
+            TestSpawnWrapper wrapper = new TestSpawnWrapper(callBack);
+            Spawner.TrySpawnGrid(name, positionMatrix, 0, out createdGrids, wrapper.Run);
+            wrapper.TotalGrids = createdGrids.Count;
         }
 
         public void Tick()

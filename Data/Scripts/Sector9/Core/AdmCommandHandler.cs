@@ -1,12 +1,16 @@
-﻿using Sandbox.ModAPI;
+﻿using ParallelTasks;
+using Sandbox.Game.Gui;
+using Sandbox.ModAPI;
 using Sector9.Core.Logging;
 using Sector9.Data.Scripts.Sector9.Multiplayer.ToLayer;
 using Sector9.Multiplayer;
+using Sector9.Server;
 using Sector9.Server.Buildings;
 using Sector9.Server.Targets;
 using Sector9.Server.Units;
 using Sector9.Server.Units.Behaviours;
 using Sector9.Server.Units.Control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using VRage.Game.ModAPI;
@@ -65,15 +69,20 @@ namespace Sector9.Core
         {
             if (!EnsureAdmin(playerId)) { return; }
 
-            List<IMyEntity> shipParts = Core.ServerSession.SpawnHostileShip(content.Name);
-            if (shipParts != null)
+            Core.ServerSession.SpawnHostileShip(content.Name, SpawnEnemyCallback);
+        }
+
+        private void SpawnEnemyCallback(WorkData data)
+        {
+            ServerSession.HostileCallback callbackData = (ServerSession.HostileCallback)data;
+            if (callbackData.AllGrids != null)
             {
-                Unit unit = new Unit(shipParts, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), Core.ServerSession.Planets), Core.ServerSession.Planets);
-                SyncManager.Instance.SendMessageFromServer($"Force spawned ship {content.Name}", playerId);
+                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), Core.ServerSession.Planets), Core.ServerSession.Planets);
+                SyncManager.Instance.SendMessageFromServer($"Force spawned ship");
             }
             else
             {
-                SyncManager.Instance.SendMessageFromServer($"Failed to force spawn ship {content.Name}!", playerId);
+                SyncManager.Instance.SendMessageFromServer($"Failed to force spawn ship");
             }
         }
 
@@ -81,17 +90,22 @@ namespace Sector9.Core
         {
             if (!EnsureAdmin(playerId)) { return; }
 
-            List<IMyEntity> gridParts = Core.ServerSession.TestSpawn(content.Name);
-            if (gridParts != null)
+            Core.ServerSession.TestSpawn(content.Name, SpawnTestgridCallback);
+        }
+
+        private void SpawnTestgridCallback(WorkData data)
+        {
+            ServerSession.TestSpawnWrapper wrapper = (ServerSession.TestSpawnWrapper)data;
+            if (wrapper.AllGrids != null)
             {
                 Vector3 movetoPos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
                 movetoPos.Add(Vector3D.Up * 20);
-                Unit unit = new Unit(gridParts, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new MoveTo(movetoPos), Core.ServerSession.Planets);
-                SyncManager.Instance.SendMessageFromServer($"Spawned {content.Name} from prefabs folder for testing", playerId);
+                Unit unit = new Unit(wrapper.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new MoveTo(movetoPos), Core.ServerSession.Planets);
+                SyncManager.Instance.SendMessageFromServer($"Spawned for testing");
             }
             else
             {
-                SyncManager.Instance.SendMessageFromServer($"Could not spawn {content.Name} from prefab folder, most likely the file does not exist (typo in name?)", playerId);
+                SyncManager.Instance.SendMessageFromServer($"could not complete test spawn");
             }
         }
 
@@ -99,15 +113,21 @@ namespace Sector9.Core
         {
             if (!EnsureAdmin(playerId)) { return; }
 
-            List<IMyEntity> gridParts = Core.ServerSession.TestBuild(content.Name);
-            if (gridParts != null)
+            Core.ServerSession.TestBuild(content.Name, BuildTestGridCallback);
+
+        }
+
+        private void BuildTestGridCallback(WorkData data)
+        {
+            ServerSession.TestSpawnWrapper wrapper = (ServerSession.TestSpawnWrapper)data;
+            if (wrapper.AllGrids != null)
             {
-                Building building = new Building(gridParts, Core.ServerSession.BuildingCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary);
-                SyncManager.Instance.SendMessageFromServer($"Spawned {content.Name} from prefabs folder for testing", playerId);
+                Building building = new Building(wrapper.AllGrids, Core.ServerSession.BuildingCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary);
+                SyncManager.Instance.SendMessageFromServer("Build test grid on player");
             }
             else
             {
-                SyncManager.Instance.SendMessageFromServer($"Could not spawn {content.Name} from prefab folder, most likely the file does not exist (typo in name?)", playerId);
+                SyncManager.Instance.SendMessageFromServer("Failed to build test grid");
             }
         }
 
