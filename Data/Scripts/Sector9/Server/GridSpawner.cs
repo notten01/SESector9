@@ -85,7 +85,7 @@ namespace Sector9.Server
             normalizedUp.Normalize();
             if (height != 0)
             {
-                targetVector += normalizedUp * height;
+                targetVector += reversedGravityVector * height; //hack: I don't know
             }
             return new MyPositionAndOrientation(targetVector, forwardVector, reversedGravityVector);
         }

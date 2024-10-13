@@ -69,7 +69,8 @@ namespace Sector9.Core
         {
             if (!EnsureAdmin(playerId)) { return; }
 
-            Core.ServerSession.SpawnHostileShip(content.Name, SpawnEnemyCallback);
+            Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition(); //bug: should be given in the spawn info
+            Core.ServerSession.SpawnHostileShip(content.Name, SpawnEnemyCallback, pos);
         }
 
         private void SpawnEnemyCallback(WorkData data)
