@@ -60,7 +60,7 @@ namespace Sector9.Server
             foreach (var grid in definition.CubeGrids)
             {
                 var gridBuilder = (MyObjectBuilder_CubeGrid)grid.Clone();
-                gridBuilder.PositionAndOrientation = new MyPositionAndOrientation(grid.PositionAndOrientation.Value.Position + offset, grid.PositionAndOrientation.Value.Forward, grid.PositionAndOrientation.Value.Up);
+                gridBuilder.PositionAndOrientation = new MyPositionAndOrientation(grid.PositionAndOrientation.Value.Position + offset, position.Forward, position.Up);
                 tmpList.Add(gridBuilder);
             }
             spawnedGrids = CreateAndSyncEntities(tmpList, callBack);
@@ -77,7 +77,8 @@ namespace Sector9.Server
             {
                 return new MyPositionAndOrientation(location);
             }
-            Vector3D reversedGravityVector = Planets.Reverse(Planets.GetGravityDirection(planet, position));
+            Vector3D gravity = Planets.GetGravityDirection(planet, position);
+            Vector3D reversedGravityVector = Planets.Reverse(gravity);
             Vector3D forwardVector;
             reversedGravityVector.CalculatePerpendicularVector(out forwardVector);
             Vector3D targetVector = planet.GetClosestSurfacePointGlobal(ref position);
