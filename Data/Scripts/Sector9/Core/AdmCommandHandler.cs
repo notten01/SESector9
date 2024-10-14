@@ -155,7 +155,11 @@ namespace Sector9.Core
 
             sendToOthers = false; //don't send the messages, others dont' have to see it
             string[] parts = messageText.Split(' ');
-            if (parts.Length == 3 && parts[1] == "testSpawn")
+            if (parts.Length == 2 && parts[1] == "scan")
+            {
+                Core.ServerSession.DoScan();
+            }
+            else if (parts.Length == 3 && parts[1] == "testSpawn")
             {
                 Spawn spawn = new Spawn() { Name = parts[2] };
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.TestSpawn, spawn);

@@ -1,5 +1,6 @@
 ﻿using Sandbox.ModAPI;
 using Sector9.Core.Logging;
+using System.Collections.Generic;
 using System.Linq;
 using VRage.Game.ModAPI;
 
@@ -10,16 +11,20 @@ namespace Sector9.Server
     /// </summary>
     public class FactionManager
     {
+        private const string cDataFileName = "S9factionsTracking.xml";
+
         private const string cSystemName = "VGhlU3lzdGVt";
         private const string cHumanityName = "Sector 1";
         public IMyFaction HostileFaciton { get; }
         public IMyFaction HumanFactiopn { get; }
+        public List<IMyFaction> PlayerFactions { get; }
 
         /// <summary>
         /// ctor, ensures that factions are created to the liking of this mods. Resets all stats incorrect
         /// </summary>
         public FactionManager()
         {
+            PlayerFactions = LoadPlayerFactions();
             HostileFaciton = MyAPIGateway.Session.Factions.TryGetFactionByName(cSystemName);
             HumanFactiopn = MyAPIGateway.Session.Factions.TryGetFactionByName(cHumanityName);
             bool createdFaction = false;
@@ -63,6 +68,14 @@ namespace Sector9.Server
             MyAPIGateway.Session.Factions.DeclareWar(HostileFaciton.FactionId, HumanFactiopn.FactionId);
             MyAPIGateway.Session.Factions.DeclareWar(HumanFactiopn.FactionId, HostileFaciton.FactionId);
 
+            foreach(long palyerFactionId in PlayerFactions.Select(x => x.FactionId))
+            {
+                MyAPIGateway.Session.Factions.SetReputation(HostileFaciton.FactionId, palyerFactionId, -1000);
+                MyAPIGateway.Session.Factions.SetReputation(palyerFactionId, HostileFaciton.FactionId, -1000);
+                MyAPIGateway.Session.Factions.SetReputation(HumanFactiopn.FactionId, palyerFactionId, 1000);
+                MyAPIGateway.Session.Factions.SetReputation(palyerFactionId, HumanFactiopn.FactionId, 1000);
+            }
+
             MyAPIGateway.Session.Factions.FactionCreated += FactionCreated;
             Logger.Log("Stared faction manager", Logger.Severity.Info, Logger.LogType.Server);
         }
@@ -100,6 +113,41 @@ namespace Sector9.Server
         private static void AssignGridToFaction(IMyCubeGrid grid, long ownerId)
         {
             grid.ChangeGridOwnership(ownerId, VRage.Game.MyOwnershipShareModeEnum.None);
+        }
+
+        public void Save()
+        {
+            PlayerFactionData data = new PlayerFactionData();
+            data.FactionNames = PlayerFactions.Select(x => x.Name).ToList();
+            using (var writer = MyAPIGateway.Utilities.WriteFileInWorldStorage(cDataFileName, typeof(PlayerFactionData)))
+            {
+                writer.Write(MyAPIGateway.Utilities.SerializeToXML(data));
+            }
+        }
+
+        private static List<IMyFaction> LoadPlayerFactions()
+        {
+            if (MyAPIGateway.Utilities.FileExistsInWorldStorage(cDataFileName, typeof(PlayerFactionData)))
+            {
+                using (var reader = MyAPIGateway.Utilities.ReadFileInWorldStorage(cDataFileName, typeof(PlayerFactionData)))
+                {
+                    PlayerFactionData data = MyAPIGateway.Utilities.SerializeFromXML<PlayerFactionData>(reader.ReadToEnd());
+                    List<IMyFaction> factions = new List<IMyFaction>();
+                    foreach(string factionName in data.FactionNames)
+                    {
+                        IMyFaction faction = MyAPIGateway.Session.Factions.TryGetFactionByName(factionName);
+                        if (faction != null)
+                        {
+                            factions.Add(faction);
+                        }
+                    }
+                    return factions;
+                }
+            } else
+            {
+                return new List<IMyFaction>();
+            }
+
         }
     }
 }
