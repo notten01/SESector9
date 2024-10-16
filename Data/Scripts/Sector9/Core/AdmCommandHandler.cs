@@ -92,7 +92,7 @@ namespace Sector9.Core
             ServerSession.HostileCallback callbackData = (ServerSession.HostileCallback)data;
             if (callbackData.AllGrids != null)
             {
-                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), Core.ServerSession.Planets), Core.ServerSession.Planets);
+                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), BaseCaptain.TargetPreference.Player, Core.ServerSession.Planets), Core.ServerSession.Planets);
                 SyncManager.Instance.SendMessageFromServer($"Force spawned ship");
             }
             else

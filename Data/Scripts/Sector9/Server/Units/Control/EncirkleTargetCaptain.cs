@@ -26,7 +26,7 @@ namespace Sector9.Server.Units.Control
         /// </summary>
         /// <param name="unit">Unit instance the captain has control of</param>
         /// <param name="target">Specific target to hunt for</param>
-        public EncirkleTargetCaptain(ITarget target, Planets planets) : base(TargetPreference.Player, planets)
+        public EncirkleTargetCaptain(ITarget target, TargetPreference preference, Planets planets) : base(preference, planets)
         {
             Target = target;
         }

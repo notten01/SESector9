@@ -1,5 +1,4 @@
 ﻿using Sandbox.ModAPI;
-using Sector9.Multiplayer;
 using Sector9.Server;
 using SpaceEngineers.Game.ModAPI;
 using System.Collections.Generic;
@@ -137,6 +136,7 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
 
         private void Entities_OnEntityAdd(IMyEntity entity)
         {
+            if (entity == null) { return; }
             IMyCubeGrid grid = entity as IMyCubeGrid;
             if (grid == null)
             {
