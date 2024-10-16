@@ -69,9 +69,9 @@ namespace Sector9.Server
         }
 
         //todo: test code
-        public void DoScan()
+        public long GetPlayerPoints()
         {
-            Commander.RunFullScan();
+            return Commander.GetPoints();
         }
 
         /// <summary>
@@ -84,6 +84,7 @@ namespace Sector9.Server
             Factions.Shutdown();
             WeaponsCore.Unload();
             Firewall.Shutdown();
+            Commander.Shutdown();
         }
 
         /// <summary>
@@ -240,10 +241,10 @@ namespace Sector9.Server
 
         public void Tick()
         {
+            Commander.Tick();
             UnitCommander.Tick();
             BuildingCommander.Tick();
             Firewall.Tick();
-
         }
 
         internal void HandleServerMessage(ToServerMessage message)

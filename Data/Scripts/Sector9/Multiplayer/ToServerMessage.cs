@@ -7,7 +7,9 @@ namespace Sector9.Multiplayer
         Spawn,
         TestSpawn,
         TestBuild,
-        ResetCountdown
+        ResetCountdown,
+        TestCommand
+
     }
 
     [ProtoContract]

@@ -53,8 +53,22 @@ namespace Sector9.Core
                     ResetFirewallCountdown(command.FromPlayerId);
                     break;
 
+                case ToLayerType.TestCommand:
+                    HandleDebugStuff(command.FromPlayerId, MyAPIGateway.Utilities.SerializeFromBinary<TestCommand>(command.PayLoad));
+                        break;
+
                 default:
                     Logger.Log($"Did not know how to handle to layer type {type}", Logger.Severity.Error, Logger.LogType.Server);
+                    break;
+            }
+        }
+
+        private void HandleDebugStuff(long playerId, TestCommand command)
+        {
+            switch(command.Command)
+            {
+                case "points":
+                    SyncManager.Instance.SendMessageFromServer($"Current thread score is now {Core.ServerSession.GetPlayerPoints()}", playerId);
                     break;
             }
         }
@@ -155,9 +169,10 @@ namespace Sector9.Core
 
             sendToOthers = false; //don't send the messages, others dont' have to see it
             string[] parts = messageText.Split(' ');
-            if (parts.Length == 2 && parts[1] == "scan")
+            if (parts.Length == 2 && parts[1] == "points")
             {
-                Core.ServerSession.DoScan();
+                TestCommand test = new TestCommand() { Command = "points" };
+                SyncManager.Instance.SendPayloadToServer(ToLayerType.TestCommand, test);
             }
             else if (parts.Length == 3 && parts[1] == "testSpawn")
             {
