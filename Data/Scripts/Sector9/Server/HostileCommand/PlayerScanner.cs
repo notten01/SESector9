@@ -59,8 +59,6 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
                 grid.OnClose += Grid_OnClose;
                 SubscribedEntities.Add(grid);
             }
-
-            MyAPIGateway.Utilities.ShowMessage("debug",$"Tracking {SubscribedEntities.Count} entities");
             Points = points;
         }
 
@@ -164,9 +162,7 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
 
         private void Grid_OnBlockAdded(IMySlimBlock block)
         {
-            SyncManager.Instance.SendMessageFromServer("new block?");
             if (block.CubeGrid == null) { return; }
-            SyncManager.Instance.SendMessageFromServer("Track new block");
             if (block.FatBlock == null)
             {
                 return;
@@ -174,7 +170,6 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
             IMyCubeGrid grid = block.CubeGrid;
             if (!IsHumanOwned(grid, GetPlayerHashes()))
             {
-                SyncManager.Instance.SendMessageFromServer("Not a human block");
                 return;
             }
             int points = GetPointsForBlock(block.FatBlock);
@@ -184,7 +179,6 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
 
         private void Grid_OnBlockRemoved(IMySlimBlock block)
         {
-            SyncManager.Instance.SendMessageFromServer("stop tracking block");
             if (block.FatBlock == null)
             {
                 return;
@@ -197,7 +191,6 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
         private void Grid_OnClose(IMyEntity entity)
         {
             IMyCubeGrid grid = entity as IMyCubeGrid;
-            SyncManager.Instance.SendMessageFromServer($"stop tracking grid {grid.DisplayName}");
             SubscribedEntities.Remove(grid);
             UnsubscribeGrid(grid);
         }
