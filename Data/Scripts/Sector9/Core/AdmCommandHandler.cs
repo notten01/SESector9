@@ -53,8 +53,22 @@ namespace Sector9.Core
                     ResetFirewallCountdown(command.FromPlayerId);
                     break;
 
+                case ToLayerType.TestCommand:
+                    HandleDebugStuff(command.FromPlayerId, MyAPIGateway.Utilities.SerializeFromBinary<TestCommand>(command.PayLoad));
+                        break;
+
                 default:
                     Logger.Log($"Did not know how to handle to layer type {type}", Logger.Severity.Error, Logger.LogType.Server);
+                    break;
+            }
+        }
+
+        private void HandleDebugStuff(long playerId, TestCommand command)
+        {
+            switch(command.Command)
+            {
+                case "points":
+                    SyncManager.Instance.SendMessageFromServer($"Current thread score is now {Core.ServerSession.GetPlayerPoints()}", playerId);
                     break;
             }
         }
@@ -78,7 +92,7 @@ namespace Sector9.Core
             ServerSession.HostileCallback callbackData = (ServerSession.HostileCallback)data;
             if (callbackData.AllGrids != null)
             {
-                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), Core.ServerSession.Planets), Core.ServerSession.Planets);
+                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), BaseCaptain.TargetPreference.Player, Core.ServerSession.Planets), Core.ServerSession.Planets);
                 SyncManager.Instance.SendMessageFromServer($"Force spawned ship");
             }
             else
@@ -155,7 +169,12 @@ namespace Sector9.Core
 
             sendToOthers = false; //don't send the messages, others dont' have to see it
             string[] parts = messageText.Split(' ');
-            if (parts.Length == 3 && parts[1] == "testSpawn")
+            if (parts.Length == 2 && parts[1] == "points")
+            {
+                TestCommand test = new TestCommand() { Command = "points" };
+                SyncManager.Instance.SendPayloadToServer(ToLayerType.TestCommand, test);
+            }
+            else if (parts.Length == 3 && parts[1] == "testSpawn")
             {
                 Spawn spawn = new Spawn() { Name = parts[2] };
                 SyncManager.Instance.SendPayloadToServer(ToLayerType.TestSpawn, spawn);

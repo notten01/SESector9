@@ -3,6 +3,7 @@ using Sandbox.ModAPI;
 using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
+using Sector9.Data.Scripts.Sector9.Server.HostileCommand;
 using Sector9.Multiplayer;
 using Sector9.Server.Buildings;
 using Sector9.Server.FireWall;
@@ -28,6 +29,8 @@ namespace Sector9.Server
         private readonly GridSpawner Spawner;
         private readonly DamageHandler DamageHandler;
         private readonly AdmCommandHandler CommandHandler;
+        private readonly OverallCommander Commander;
+
 
         private ServerData Data;
 
@@ -44,6 +47,7 @@ namespace Sector9.Server
             BlockLibrary = new DefinitionLibrary(WeaponsCore);
             UnitCommander = new UnitCommander(DamageHandler);
             BuildingCommander = new BuildingCommander(DamageHandler);
+            Commander = new OverallCommander(Factions);
             CommandHandler = new AdmCommandHandler(core);
         }
 
@@ -60,7 +64,14 @@ namespace Sector9.Server
             {
                 writer.Write(MyAPIGateway.Utilities.SerializeToXML<ServerData>(Data));
             }
+            Factions.Save();
             Firewall.Save();
+        }
+
+        //todo: test code
+        public long GetPlayerPoints()
+        {
+            return Commander.GetPoints();
         }
 
         /// <summary>
@@ -73,6 +84,7 @@ namespace Sector9.Server
             Factions.Shutdown();
             WeaponsCore.Unload();
             Firewall.Shutdown();
+            Commander.Shutdown();
         }
 
         /// <summary>
@@ -229,10 +241,10 @@ namespace Sector9.Server
 
         public void Tick()
         {
+            Commander.Tick();
             UnitCommander.Tick();
             BuildingCommander.Tick();
             Firewall.Tick();
-
         }
 
         internal void HandleServerMessage(ToServerMessage message)
