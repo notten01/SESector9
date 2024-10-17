@@ -1,5 +1,4 @@
 ﻿using Sector9.Core;
-using Sector9.Server.Units.Behaviours;
 
 namespace Sector9.Server.Units
 {
@@ -8,12 +7,6 @@ namespace Sector9.Server.Units
     /// </summary>
     public interface IBehaviour : ITickable
     {
-        /// <summary>
-        /// Attach the pilot to the behaviour
-        /// </summary>
-        /// <param name="pilot">The pilot class used to move the ship</param>
-        void AttachPilot(Pilot pilot);
-
         /// <summary>
         /// Attach the unit instance to the behaviour
         /// </summary>

@@ -1,5 +1,4 @@
 ﻿using ParallelTasks;
-using Sandbox.Game.Gui;
 using Sandbox.ModAPI;
 using Sector9.Core.Logging;
 using Sector9.Data.Scripts.Sector9.Multiplayer.ToLayer;
@@ -8,13 +7,8 @@ using Sector9.Server;
 using Sector9.Server.Buildings;
 using Sector9.Server.Targets;
 using Sector9.Server.Units;
-using Sector9.Server.Units.Behaviours;
-using Sector9.Server.Units.Control;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using VRage.Game.ModAPI;
-using VRage.ModAPI;
 using VRageMath;
 
 namespace Sector9.Core
@@ -84,6 +78,7 @@ namespace Sector9.Core
             if (!EnsureAdmin(playerId)) { return; }
 
             Vector3 pos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition(); //bug: should be given in the spawn info
+            pos += MyAPIGateway.Session.LocalHumanPlayer.Character.WorldMatrix.Forward * 2200;
             Core.ServerSession.SpawnHostileShip(content.Name, SpawnEnemyCallback, pos);
         }
 
@@ -92,7 +87,7 @@ namespace Sector9.Core
             ServerSession.HostileCallback callbackData = (ServerSession.HostileCallback)data;
             if (callbackData.AllGrids != null)
             {
-                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new EncirkleTargetCaptain(new PlayerTarget(MyAPIGateway.Session.LocalHumanPlayer), BaseCaptain.TargetPreference.Player, Core.ServerSession.Planets), Core.ServerSession.Planets);
+                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, Core.ServerSession.Planets, MyAPIGateway.Session.LocalHumanPlayer.Character);
                 SyncManager.Instance.SendMessageFromServer($"Force spawned ship");
             }
             else
@@ -108,14 +103,11 @@ namespace Sector9.Core
             Core.ServerSession.TestSpawn(content.Name, SpawnTestgridCallback);
         }
 
-        private void SpawnTestgridCallback(WorkData data)
+        private static void SpawnTestgridCallback(WorkData data)
         {
             ServerSession.TestSpawnWrapper wrapper = (ServerSession.TestSpawnWrapper)data;
             if (wrapper.AllGrids != null)
             {
-                Vector3 movetoPos = MyAPIGateway.Session.LocalHumanPlayer.GetPosition();
-                movetoPos.Add(Vector3D.Up * 20);
-                Unit unit = new Unit(wrapper.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, new MoveTo(movetoPos), Core.ServerSession.Planets);
                 SyncManager.Instance.SendMessageFromServer($"Spawned for testing");
             }
             else
