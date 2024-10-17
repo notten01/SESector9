@@ -87,7 +87,7 @@ namespace Sector9.Core
             ServerSession.HostileCallback callbackData = (ServerSession.HostileCallback)data;
             if (callbackData.AllGrids != null)
             {
-                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, Core.ServerSession.Planets, MyAPIGateway.Session.LocalHumanPlayer.Character);
+                Unit unit = new Unit(callbackData.AllGrids, Core.ServerSession.UnitCommander, "testspawn", Core.ServerSession.WeaponsCore, Core.ServerSession.BlockLibrary, MyAPIGateway.Session.LocalHumanPlayer.Character);
                 SyncManager.Instance.SendMessageFromServer($"Force spawned ship");
             }
             else

@@ -1,6 +1,7 @@
 ﻿using ParallelTasks;
 using Sandbox.Game.Entities;
 using Sandbox.ModAPI;
+using Sandbox.ModAPI.Interfaces;
 using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
@@ -20,7 +21,6 @@ namespace Sector9.Server.Units
         private readonly UnitCommander Commander;
         private readonly List<IMyEntity> Grids;
         private readonly DefinitionLibrary Library;
-        private readonly Planets Planets;
         private readonly string PrefabName;
         private readonly Wc WeaponsCore;
         private DamageHandler DamageHandler;
@@ -30,21 +30,18 @@ namespace Sector9.Server.Units
         private Provider Provider;
         private IMyRemoteControl RemoteControl;
         private int ResuplyCounter = 0;
-        private List<Thruster> Thrusters;
-        private IMyOffensiveCombatBlock CombatAi;
-        private IMyFlightMovementBlock FlightAi;
         private bool InGameAi = false;
         private bool Autopiloting = false;
-        private IMyEntity Target;
+        private readonly IMyEntity Target;
         private int AutoPilotTimeout = 0;
         private int OnLocationTimeout = 0;
         private Vector3D TargetPosition;
+        private IMyFlightMovementBlock FlightBlock;
+        private IMyOffensiveCombatBlock CombatBlock;
 
-
-        public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, Planets planets, IMyEntity target)
+        public Unit(List<IMyEntity> grids, UnitCommander commander, string prefabName, Wc weaponsCore, DefinitionLibrary library, IMyEntity target)
         {
-            target = Target;
-            Planets = planets;
+            Target = target;
             Commander = commander;
             PrefabName = prefabName;
             WeaponsCore = weaponsCore;
@@ -116,26 +113,38 @@ namespace Sector9.Server.Units
                         return;
                     }
                 }
+                else
+                {
+                    OnLocationTimeout++;
+                }
 
                 if (AutoPilotTimeout > 1800)
                 {
                     //check if still on location
                     AutoPilotTimeout = 0;
                     Vector3D newTargetPosition = Target.GetPosition();
-                    if( Vector3D.Distance(newTargetPosition, TargetPosition) > 100)
+                    if (Vector3D.Distance(newTargetPosition, TargetPosition) > 100)
                     {
                         RemoteControl.ClearWaypoints();
                         RemoteControl.AddWaypoint(newTargetPosition, "Target");
                         RemoteControl.SetAutoPilotEnabled(true);
                         TargetPosition = newTargetPosition;
                     }
-                } else
+                }
+                else
                 {
                     AutoPilotTimeout++; //idle
                 }
-            } else if (!InGameAi)
+            }
+            else if (!InGameAi)
             {
                 //set autopilot
+                if (Target == null)
+                {
+                    Logger.Log("Target for unit is null!", Logger.Severity.Error, Logger.LogType.Server);
+                    IsValid = false;
+                    return;
+                }
                 TargetPosition = Target.GetPosition();
                 RemoteControl.AddWaypoint(TargetPosition, "Target");
                 RemoteControl.FlightMode = Sandbox.ModAPI.Ingame.FlightMode.OneWay;
@@ -143,8 +152,6 @@ namespace Sector9.Server.Units
                 RemoteControl.SetAutoPilotEnabled(true);
                 Autopiloting = true;
             }
-
-
 
             if (ResuplyCounter > 600)
             {
@@ -155,7 +162,6 @@ namespace Sector9.Server.Units
             {
                 ResuplyCounter++;
             }
-
         }
 
         private void SwitchToIngameAi()
@@ -163,28 +169,29 @@ namespace Sector9.Server.Units
             Autopiloting = false;
             InGameAi = true;
             RemoteControl.SetAutoPilotEnabled(false);
-            if (FlightAi != null)
+            if (FlightBlock != null)
             {
-                FlightAi.Enabled = true;
+                List<ITerminalAction> moveActions = new List<ITerminalAction>();
+                FlightBlock.GetActions(moveActions);
+                ITerminalAction activateAction = moveActions.SingleOrDefault(x => x.Id == "ActivateBehavior_On");
+                activateAction?.Apply(FlightBlock);
             }
-            if (CombatAi != null)
+            if (CombatBlock != null)
             {
-                CombatAi.Enabled = true;
+                List<ITerminalAction> combatActions = new List<ITerminalAction>();
+                CombatBlock.GetActions(combatActions);
+                ITerminalAction activateAction = combatActions.SingleOrDefault(x => x.Id == "ActivateBehavior_On");
+                activateAction?.Apply(CombatBlock);
             }
         }
 
         private void Initialize()
         {
-            Thrusters = new List<Thruster>();
             PrimaryGrid = Grids[0] as MyCubeGrid;
             ListReader<MyCubeBlock> fatblocks = PrimaryGrid.GetFatBlocks();
             RemoteControl = fatblocks.OfType<MyRemoteControl>().FirstOrDefault();
-            CombatAi = fatblocks.OfType<IMyOffensiveCombatBlock>().FirstOrDefault();
-            FlightAi = fatblocks.OfType<IMyFlightMovementBlock>().FirstOrDefault();
-            foreach (IMyThrust thrust in fatblocks.OfType<IMyThrust>())
-            {
-                Thrusters.Add(new Thruster(thrust));
-            }
+            CombatBlock = fatblocks.OfType<IMyOffensiveCombatBlock>().FirstOrDefault();
+            FlightBlock = fatblocks.OfType<IMyFlightMovementBlock>().FirstOrDefault();
             Provider = new Provider(fatblocks, WeaponsCore, Library);
             DamageHandler.TrackEntity(PrimaryGrid.EntityId);
         }
