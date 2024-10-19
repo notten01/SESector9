@@ -107,7 +107,13 @@ namespace Sector9.Server
                         if (definition.HardPoint.WeaponName == weaponName)
                         {
                             var weaponId = weaponsInBlock[weaponName];
-                            SubWeapons.Add(new SubWeapon(definition, weaponsCore.GetActiveAmmo(termBlock, weaponId), block, knownAmmoTypes));
+                            try
+                            {
+                                SubWeapons.Add(new SubWeapon(definition, weaponsCore.GetActiveAmmo(termBlock, weaponId), block, knownAmmoTypes));
+                            } catch (Exception e)
+                            {
+                                Logger.Log($"Error while adding subweapon {weaponName}: {e.Message}", Logger.Severity.Error, Logger.LogType.Server);
+                            }
                             break;
                         }
                     }

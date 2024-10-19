@@ -1,8 +1,4 @@
-﻿using Sector9.Server;
-using Sector9.Server.Targets;
-using Sector9.Server.Units.Control;
-
-namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units
+﻿namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units
 {
     internal interface IUnit
     {
@@ -12,14 +8,6 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units
         /// <param name="type">Type where it will spawn</param>
         /// <returns>Gridname that should be spawned</returns>
         string GetGridName(UnitType type);
-
-        /// <summary>
-        /// Get the captain for the unit
-        /// </summary>
-        /// <param name="target">target to attack</param>
-        /// <param name="planets">reference to the planets</param>
-        /// <returns>A captain to control the unit</returns>
-        ICaptain GetBehaviour(ITarget target, Planets planets);
 
         /// <summary>
         /// Can fly in space
