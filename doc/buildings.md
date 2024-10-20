@@ -7,3 +7,4 @@
 | outpost cannon     | b3V0cG9zdCBmbGFr             | planet   | turret | medium |
 | outpost at         | b3V0cG9zdCBhdA==             | planet   | turret | medium |
 | outpost     | b2JzZXJ2ZXI=         | palnet   | turret | medium |
+| Resource station 1 | cmVzb3VyY2Ugc3RhdGlvbiAx | planet | resources | na|

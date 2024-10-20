@@ -1,4 +1,5 @@
 ﻿using Sector9.Core;
+using Sector9.Data.Scripts.Sector9.Server.HostileCommand.utilityAi;
 using Sector9.Server;
 
 namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
@@ -10,16 +11,20 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
     {
         private readonly FactionManager Factions;
         private readonly PlayerScanner Scanner;
+        private readonly Ai Ai;
+        private readonly GameState GameState;
+        private readonly WarpQueue WarpQueue;
 
-        private long CurrentPoints; //todo: make persistant
-        private int cooldown = 36000;
-        private int resourceTick = 3600;
+        private int cooldown = 3600;
 
 
         public OverallCommander(FactionManager factions)
         {
             Factions = factions;
+            WarpQueue = new WarpQueue();
             Scanner = new PlayerScanner(Factions);
+            Ai = new Ai(Scanner.Points, WarpQueue);
+            GameState = Ai.GameState;
         }
 
         public long GetPoints()
@@ -30,17 +35,14 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
         public void Tick()
         {
             cooldown--;
-            resourceTick--;
-            if (resourceTick == 0)
+            WarpQueue.Tick();
+            if (cooldown == 0)
             {
-                CurrentPoints += Scanner.Points;
-                resourceTick = 3600;
+                Ai.GameState.Resources += Scanner.Points;
+                Ai.GameState.HumanStrength = Scanner.Points;
+                Ai.TakeAction();
+                cooldown = 3600;
             }
-            if (cooldown > 0)
-            {
-                return; // no action needed yet
-            }
-            cooldown = NextAction();
         }
 
         public void Shutdown()
@@ -48,9 +50,9 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
             Scanner?.Shutdown();
         }
 
-        public int NextAction()
+        public void Save()
         {
-            return 36000;
+            Ai.Save();
         }
     }
 }

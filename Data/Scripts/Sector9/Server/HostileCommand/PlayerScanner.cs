@@ -74,35 +74,35 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
         {
             if (block is IMyRefinery)
             {
-                return 10;
+                return 100;
             }
             else if (block is IMyAssembler)
             {
-                return 15;
+                return 50;
             }
             else if (block is IMyCockpit)
             {
-                return 5;
+                return 10;
             }
             else if (block is IMyCargoContainer || block is IMyGasTank)
             {
-                return 1;
+                return 10;
             }
             else if (block is IMyGasGenerator)
             {
-                return 5;
+                return 20;
             }
             else if (block is IMyReactor)
             {
-                return 10;
+                return 20;
             }
             else if (block is IMyLargeMissileTurret || block is IMySmallMissileLauncher)
             {
-                return 5;
+                return 20;
             }
             else if (block is IMyLargeGatlingTurret || block is IMySmallGatlingGun)
             {
-                return 3;
+                return 10;
             }
             else if (block is IMyWindTurbine || block is IMySolarPanel || block is IMyBatteryBlock)
             {
@@ -115,6 +115,14 @@ namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand
             else if (block is IMyThrust)
             {
                 return 1;
+            }
+            else if (block is IMyGasTank)
+            {
+                return 2;
+            }
+            else if (block is IMyShipDrill || block is IMyShipGrinder || block is IMyShipWelder)
+            {
+                return 2;
             }
 
             return 0;

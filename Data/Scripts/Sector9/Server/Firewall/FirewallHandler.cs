@@ -59,6 +59,15 @@ namespace Sector9.Server.FireWall
         }
 
         /// <summary>
+        /// Get the (cube) grid that currently contains the firewall
+        /// </summary>
+        /// <returns>The grid or null if there is no firewall</returns>
+        public IMyCubeGrid GetFirewallGrid()
+        {
+            return Firewall?.CubeGrid;
+        }
+
+        /// <summary>
         /// reset the current firewall countdown (cheat!)
         /// </summary>
         public void ResetCountdown()

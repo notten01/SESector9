@@ -4,6 +4,7 @@ using Sector9.Api;
 using Sector9.Core;
 using Sector9.Core.Logging;
 using Sector9.Data.Scripts.Sector9.Server.HostileCommand;
+using Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units;
 using Sector9.Multiplayer;
 using Sector9.Server.Buildings;
 using Sector9.Server.FireWall;
@@ -99,6 +100,14 @@ namespace Sector9.Server
             List<IMyEntity> createdGrids;
             HostileCallback wrapper = new HostileCallback(Factions, callback);
             wrapper.TotalGrids = Spawner.TrySpawnGrid(shipName, positionMatrix, 500, out createdGrids, wrapper.Run);
+        }
+
+        public void SpawnHostileShip(IUnit unit, Action<WorkData> callback, Vector3 desiredPostion)
+        {
+            var positionMatrix = MatrixD.CreateWorld(desiredPostion, Vector3D.Forward, Vector3D.Up);
+            List<IMyEntity> createdGrids;
+            HostileCallback wrapper = new HostileCallback(Factions, callback);
+            wrapper.TotalGrids = Spawner.TrySpawnGrid(unit, positionMatrix, 500, out createdGrids, wrapper.Run);
         }
 
         public sealed class HostileCallback : WorkData

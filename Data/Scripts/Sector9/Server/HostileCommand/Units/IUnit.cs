@@ -1,6 +1,6 @@
 ﻿namespace Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units
 {
-    internal interface IUnit
+    public interface IUnit
     {
         /// <summary>
         /// Get the filename for the grid to spawn

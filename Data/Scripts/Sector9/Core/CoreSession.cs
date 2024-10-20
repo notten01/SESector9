@@ -19,8 +19,15 @@ namespace Sector9.Core
         public SyncManager SyncManager { get; private set; }
         private int LogRotationCounter = 0;
 
+        /// <summary>
+        /// Gets the instance of the core mod session.
+        /// BUT ONLY AFTER THE BEFORESTART HAS RUN!
+        /// </summary>
+        public static CoreSession Instance { get; private set; }
+
         public override void BeforeStart()
         {
+            Instance = this;
             if (MyAPIGateway.Multiplayer.IsServer)
             {
                 ServerSession = new ServerSession(this);

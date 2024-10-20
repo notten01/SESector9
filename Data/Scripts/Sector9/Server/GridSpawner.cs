@@ -2,6 +2,7 @@
 using Sandbox.Game.Entities;
 using Sandbox.ModAPI;
 using Sector9.Core.Logging;
+using Sector9.Data.Scripts.Sector9.Server.HostileCommand.Units;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +34,43 @@ namespace Sector9.Server
         /// Spawn a grid (including subgrids) on a given location
         /// </summary>
         /// <param name="name">Name of prefab to the grid('s) from</param>
-        /// <param name="Location">Positon in world matrix where to spawn the ship</param>
+        /// <param name="location">Positon in world matrix where to spawn the ship</param>
         /// <param name="height">Height above the ground (if applicable) to spawn</param>
         /// <param name="spawnedGrids">List of grids that got spawned</param>
         /// <param name="callBack">Callback function called once entity list is ready</param>
         /// <returns>Total number of grids spawning</returns>
-        public int TrySpawnGrid(string name, MatrixD Location, int height, out List<IMyEntity> spawnedGrids, Action<IMyEntity> callBack)
+        public int TrySpawnGrid(string name, MatrixD location, int height, out List<IMyEntity> spawnedGrids, Action<IMyEntity> callBack)
+        {
+            bool onPlanet;
+            MatrixD position = PlanetSafety(location, height, out onPlanet).GetMatrix();
+            return SpawnGridEntities(name, out spawnedGrids, callBack, position);
+        }
+
+        /// <summary>
+        /// Spawn a grid (including subgrids) on a given location
+        /// </summary>
+        /// <param name="unit">Unit to spawn</param>
+        /// <param name="location">Positon in world matrix where to spawn the ship</param>
+        /// <param name="height">Height above the ground (if applicable) to spawn</param>
+        /// <param name="spawnedGrids">List of grids that got spawned</param>
+        /// <param name="callBack">Callback function called once entity list is ready</param>
+        /// <returns>Total number of grids spawning</returns>
+        public int TrySpawnGrid(IUnit unit, MatrixD location, int height, out List<IMyEntity> spawnedGrids, Action<IMyEntity> callBack)
+        {
+            bool onPlanet;
+            MatrixD position = PlanetSafety(location, height, out onPlanet).GetMatrix();
+            string unitName;
+            if (onPlanet)
+            {
+                unitName =unit.GetGridName(UnitType.Atmosphere);
+            } else
+            {
+                unitName = unit.GetGridName(UnitType.Space);
+            }
+            return SpawnGridEntities(unitName, out spawnedGrids, callBack, position);
+        }
+
+        private int SpawnGridEntities(string name, out List<IMyEntity> spawnedGrids, Action<IMyEntity> callBack, MatrixD position)
         {
             MyPrefabDefinition definition;
             if (!DefinitionsCache.TryGetValue(name, out definition))
@@ -47,8 +79,6 @@ namespace Sector9.Server
                 spawnedGrids = null;
                 return 0;
             }
-
-            MatrixD position = PlanetSafety(Location, height).GetMatrix();
             var size = GetGridSize(definition);
             var distance = (Math.Sqrt(size.LengthSquared()) * ToGridLength(definition.CubeGrids[0].GridSizeEnum) / 2);
             var spawnPoint = position.Translation + position.Forward * distance;
@@ -68,15 +98,17 @@ namespace Sector9.Server
             return tmpList.Count;
         }
 
-        private MyPositionAndOrientation PlanetSafety(MatrixD location, int height)
+        private MyPositionAndOrientation PlanetSafety(MatrixD location, int height, out bool onPlanet)
         {
             Vector3D position = location.Translation;
             MyPlanet planet = Planets.GetPlanetOfPoint(position);
 
             if (planet == null)
             {
+                onPlanet = false;
                 return new MyPositionAndOrientation(location);
             }
+            onPlanet = true;
             Vector3D gravity = Planets.GetGravityDirection(planet, position);
             Vector3D reversedGravityVector = Planets.Reverse(gravity);
             Vector3D forwardVector;
